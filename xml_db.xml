@@ -41,7 +41,7 @@
     <type label="Inet CIDR Addr" length="0" sql="CIDR" quote="'"/>
     <type label="Geometry" length="0" sql="GEOMETRY" quote="'"/>
   </group>
-</datatypes><table x="67" y="402" name="users">
+</datatypes><table x="66" y="413" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -55,7 +55,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="611" y="408" name="games">
+<table x="611" y="411" name="games">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -101,7 +101,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="808" y="149" name="moves">
+<table x="812" y="156" name="plies">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -112,13 +112,17 @@
 <row name="ply_count" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="parent_id" null="1" autoincrement="0">
+<row name="next_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
+<default>NULL</default><relation table="plies" row="id" />
+</row>
 <row name="move" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="fen" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="status" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
@@ -132,13 +136,9 @@
 <row name="commenter" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="game_id" null="1" autoincrement="0">
+<row name="ply_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="games" row="id" />
-</row>
-<row name="move_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="moves" row="id" />
+<default>NULL</default><relation table="plies" row="id" />
 </row>
 <row name="content" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -147,7 +147,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="805" y="645" name="players">
+<table x="850" y="588" name="players">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
