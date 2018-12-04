@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
-<!-- Active URL: https://kitt.lewagon.com/db/323 -->
+<!-- Active URL: https://kitt.lewagon.com/db/392 -->
 <sql>
 <datatypes db="postgresql">
   <group label="Numeric" color="rgb(238,238,170)">
@@ -72,11 +72,11 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="white_player_id" null="1" autoincrement="0">
-<datatype>TEXT</datatype>
+<datatype>INTEGER</datatype>
 <default>NULL</default><relation table="players" row="id" />
 </row>
 <row name="black_player_id" null="1" autoincrement="0">
-<datatype>TEXT</datatype>
+<datatype>INTEGER</datatype>
 <default>NULL</default><relation table="players" row="id" />
 </row>
 <row name="result" null="1" autoincrement="0">
@@ -97,6 +97,9 @@
 <row name="elo_black" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -112,8 +115,8 @@
 <row name="ply_count" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="next_id" null="1" autoincrement="0">
-<datatype>TEXT</datatype>
+<row name="parent_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
 <default>NULL</default><relation table="plies" row="id" />
 </row>
 <row name="move" null="1" autoincrement="0">
@@ -147,7 +150,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="857" y="514" name="players">
+<table x="850" y="588" name="players">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -179,7 +182,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="386" y="420" name=" collections">
+<table x="386" y="420" name="collections">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
