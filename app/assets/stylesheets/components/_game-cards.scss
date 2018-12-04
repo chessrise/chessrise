@@ -1,0 +1,32 @@
+// Games we find in the 2nd sidebar
+
+.game-card {
+  height: 100px;
+  margin: 10px;
+  background-size: cover !important;
+  background-position: center;
+  color: light-gray;
+  position: relative;
+  border: 1px solid #ABCAD4;
+}
+.game-card-header {
+  background-color: rgba(171,202,212,0.5);
+  color: #1E5772;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.game-card-body {
+  position: absolute;
+  top: 25px;
+  left: 5px;
+}
+.game-card-title {
+  font-size: 14px;
+}
+.game-card-text {
+  font-size: 14px;
+  opacity: 0.8;
+  font-weight: lighter;
+}
+
