@@ -1,19 +1,76 @@
-<%= content_for(:navbar_class, "navbar-home") %>
+<%# content_for(:navbar_class, "navbar-home") %>
 
-<div class="wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Sidebar -->
-      <%= render 'shared/sidebar' %>
+<div class="banner" style="background-image: linear-gradient(-225deg,rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path('JC_is_the_boss.jpg') %>);">
+  <div class="banner-content">
+    <h1>ChessRise</h1>
+    <p><span id="banner-typed-text"></span></p>
 
-      <!-- Page Content -->
-      <div id="content">
+    <%= link_to "Jump in", games_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<div class= "wrapper-white">
 
-        <div id="chessgame">
+  <div class= "container">
+    <div class="content-description">
+      <h1><strong>A simple tool for complex games</strong></h1>
+      <p>
+        What if you could replay your game? and for each move see the one that the great masters played in this position... Now you can, with ChessRise.. New features in progress ;-)
+      </p>
+    </div>
+
+    <div class="row" style= "margin: 15px auto 30px auto;">
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-feature">
+          <img class="card-home" src="<%= image_path('folder.svg') %>" alt="">
+          <p>Create collections</p>
         </div>
-
       </div>
 
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-feature">
+          <img class="card-home" src="<%= image_path('report.svg') %>" alt="">
+          <p>Analyze games</p>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-feature">
+          <img class="card-home" src="<%= image_path('database.svg') %>" alt="">
+          <p>More than 2M games.. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class= "wrapper-grey">
+  <div class= "container">
+    <div class="testimonies-content-description">
+      <h1><strong>A modern tool for modern players</strong></h1>
+      <p>See your games in a beautiful format on any device. Elegant and easy on the eyes, now you can focus on your Game.
+         </p>
+    </div>
+    <div class="row" style= "margin: 15px auto 30px auto;">
+      <div class="col-xs-12">
+        <div class="card-feature-2">
+          <%#= image_tag "Bobby_Fischer.jpg", height: 100, class: "avatar-resizable" %>
+          <p>Modern</p>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="card-feature-2">
+          <%#= image_tag "KASPAROV-Garry.jpg", height: 100, width:100, class: "avatar-resizable" %>
+          <p>Elegant</p>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="card-feature-2">
+          <%#= image_tag "martin_provost.jpg", height: 100, class: "avatar-resizable" %>
+          <p>Focused</p>
+        </div>
+      </div>
+      
     </div>
   </div>
 </div>
