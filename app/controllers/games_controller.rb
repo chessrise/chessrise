@@ -2,13 +2,6 @@ class GamesController < ApplicationController
   before_action :calculate_eco, only: [:update, :create]
   before_action :set_game, only: [:show, :edit, :udpate, :destroy]
 
-  def create
-  end
-
-  def new
-    @game = Game.new
-  end
-
   def index
   end
 
@@ -21,11 +14,17 @@ class GamesController < ApplicationController
     @comment = Comment.new
   end
 
-  def update
+  def new
+    @game = Game.new
+  end
+
+  def create
   end
 
   def edit
+  end
 
+  def update
   end
 
   def destroy

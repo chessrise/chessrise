@@ -1,7 +1,7 @@
 class Ply < ApplicationRecord
   belongs_to :game
   belongs_to :parent, class_name: "Ply", optional: true
-  has_one :comment, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def white?
     !(ply_count % 2).zero?

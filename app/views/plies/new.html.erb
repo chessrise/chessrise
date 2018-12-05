@@ -1,2 +1,6 @@
-<h1>Plies#new</h1>
-<p>Find me in app/views/plies/new.html.erb</p>
+<%= simple_form_for @ply  %>
+  <%= f.input :ply_count %>
+  <%= f.input :move %>
+  <%= f.input :status %>
+  <%= f.submit %>
+<% end %>

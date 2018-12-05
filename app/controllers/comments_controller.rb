@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def index
   end
 
-  def edit
+  def show
   end
 
   def new
@@ -13,10 +13,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new
   end
 
-  def show
+  def edit
+  end
+
+  def update
   end
 
   def destroy
