@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :players
 
-  resources :plies do
+  resources :plies, only do [:index, :show, :new, :create, :edit, :update, :destroy]
     resources :comments, only: [:edit, :show, :new, :destroy, :create]
   end
 
@@ -21,3 +21,4 @@ Rails.application.routes.draw do
     end
   end
 end
+

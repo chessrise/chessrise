@@ -1,0 +1,38 @@
+.players {
+  display: inline-flex;
+  // align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  width: 540px;
+}
+.card-notations-header {
+  background: #1E5772;
+  color: LightGray;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+  box-shadow: 1px 1px #D6E0E5;
+  width: 250px;
+  margin-bottom: 0;
+}
+i {
+  color: LightGray;
+  opacity: 0.6;
+}
+i:hover {
+  color: LightGray;
+  opacity: 1;
+}
+.chess-moves {
+  padding: 5px;
+}
+.chess-board {
+  background-color: white;
+}
+.chess-notations {
+  background-color : white;
+  min-height: 512px;
+}
+.chess-box {
+  margin-top: 30px;
+}
