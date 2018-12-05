@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :players
 
   resources :plies do
-    resources :comments, only: [:edit, :show, :new, :destroy]
+    resources :comments, only: [:edit, :show, :new, :destroy, :create]
   end
 
   resources :collections do
