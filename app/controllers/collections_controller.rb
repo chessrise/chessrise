@@ -3,6 +3,7 @@ class CollectionsController < ApplicationController
     @collection = "All games"
     @collections = Collection.all
     @games = Game.all
+    @game = Game.find(1)
   end
 
   def show
