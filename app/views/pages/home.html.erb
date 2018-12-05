@@ -1,14 +1,21 @@
 <%= content_for(:navbar_class, "navbar-home") %>
 
 <div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <%= render 'shared/sidebar' %>
 
-    <!-- Sidebar -->
-  <%= render 'shared/sidebar' %>
+      <!-- Page Content -->
+      <div id="content">
 
-    <!-- Page Content -->
-    <div id="content">
-        <!-- We'll fill this with dummy content -->
+        <div id="chessgame">
+        </div>
+
+      </div>
+
     </div>
-
+  </div>
 </div>
+
 

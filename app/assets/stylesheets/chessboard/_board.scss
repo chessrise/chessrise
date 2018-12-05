@@ -1,0 +1,44 @@
+/*
+ * Board
+ */
+
+.cg-board-wrap {
+  background-image: image-url('boards/blue.svg');
+}
+
+.cg-board-wrap piece.pawn.white {
+  background-image: image-url('pieces/wP.svg');
+}
+.cg-board-wrap piece.bishop.white {
+  background-image: image-url('pieces/wB.svg');
+}
+.cg-board-wrap piece.knight.white {
+  background-image: image-url('pieces/wN.svg');
+}
+.cg-board-wrap piece.rook.white {
+  background-image: image-url('pieces/wR.svg');
+}
+.cg-board-wrap piece.queen.white {
+  background-image: image-url('pieces/wQ.svg');
+}
+.cg-board-wrap piece.king.white {
+  background-image: image-url('pieces/wK.svg');
+}
+.cg-board-wrap piece.pawn.black {
+  background-image: image-url('pieces/bP.svg');
+}
+.cg-board-wrap piece.bishop.black {
+  background-image: image-url('pieces/bB.svg');
+}
+.cg-board-wrap piece.knight.black {
+  background-image: image-url('pieces/bN.svg');
+}
+.cg-board-wrap piece.rook.black {
+  background-image: image-url('pieces/bR.svg');
+}
+.cg-board-wrap piece.queen.black {
+  background-image: image-url('pieces/bQ.svg');
+}
+.cg-board-wrap piece.king.black {
+  background-image: image-url('pieces/bK.svg');
+}
