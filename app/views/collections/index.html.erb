@@ -1,5 +1,16 @@
-<h1>Collections#index</h1>
-<p>Find me in app/views/collections/index.html.erb</p>
+
+<h1>Your collections</h1>
+
+<ul>
+  <% current_user.collections.each do |collection| %>
+    <li>
+      <%= collection.name %>
+      <%= link_to "See games in collection",collection_path(collection)  %>
+    </li>
+  <% end %>
+</ul>
+
 
 <p class="collection-card">My favorite list</p>
 <p class="collection-card">All games</p>
+

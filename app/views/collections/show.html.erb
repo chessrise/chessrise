@@ -1,2 +1,12 @@
-<h1>Collections#show</h1>
-<p>Find me in app/views/collections/show.html.erb</p>
+<h1> <%= @collection.name %>  </h1>
+
+<ul>
+  <%@collection.games.each do |game| %>
+    <li>game number: <%= game.id %> </li>
+    <li><%= game.white_player.first_name %></li>
+    <li><%= game.black_player.first_name %></li>
+    <li><%= game.ply_count_total %></li>
+    <li><%= game.result %></li>
+    <%= link_to "See game moves", game_path(game)  %>
+  <% end %>
+</ul>

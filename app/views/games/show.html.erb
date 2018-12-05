@@ -1,2 +1,107 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+
+<div class="container">
+
+  <%= link_to "New Game", new_game_path, class: "btn btn-primary"  %>
+  <%= link_to "New Player", new_player_path, class: "btn btn-primary"  %>
+  <%= link_to "New Collection", new_collection_path, class: "btn btn-primary"  %>
+
+  <h2>TO DO</h2>
+  <ul>
+    <li>Add comment to ply</li>
+    <li>Delete ply in middle of game</li>
+    <li>Add "variant" ply to ply</li>
+    <li>Game collection</li>
+  </ul>
+
+  <h2>Game collections</h2>
+  <ul>
+    <% @game.collections.each do |collection| %>
+      <li><%= collection.name %></li>
+    <% end %>
+  </ul>
+
+
+  <h2>Game details</h2>
+  <ul>
+    <li>Game id: <%= @game.id %> </li>
+    <li>Name: <%= @game.name %> </li>
+    <li>Elo White: <%= @game.elo_white%></li>
+    <li>Elo Black: <%= @game.elo_black%></li>
+    <li>Event: <%= @game.event %></li>
+    <li>Site: <%= @game.site %></li>
+    <li>Date: <%= @game.date %></li>
+    <li>Result: <%= @game.result %></li>
+    <%= link_to "Update", edit_game_path(@game), class: "btn btn-success"  %>
+  </ul>
+
+  <h2> White Player details</h2>
+  <ul>
+    <li>White player FN: <%= @white_player.first_name %></li>
+    <li>White player LN: <%= @white_player.last_name %></li>
+    <li>White player title: <%= @white_player.title %></li>
+    <%= link_to "Update", edit_player_path(@white_player), class: "btn btn-success" %>
+  </ul>
+
+  <h2> Black Player details</h2>
+  <ul>
+    <li>Black player FN: <%= @black_player.first_name %></li>
+    <li>Black player LN: <%= @black_player.last_name %></li>
+    <li>Black player title: <%= @black_player.title %></li>
+    <%= link_to "Update", edit_player_path(@black_player), class: "btn btn-success" %>
+  </ul>
+
+  <h2>Game comments</h2>
+
+  <ul>
+    <% @main_plies.each do |ply| %>
+     <% if ply.comments.present? %>
+        <% ply.comments.each do |comment| %>
+          <li>
+            <span> Ply_id: <%= ply.id%></span>
+            <span> Commenter: <%= comment.commenter%> </span>
+            <span> Comment_id: <%= comment.id%> </span>
+            <span> Content: <%= comment.content %></span>
+            <%= link_to "Update", edit_ply_comment_path(ply, comment), class: "btn btn-success" %>
+            <%= link_to "Delete", ply_comment_path(ply, comment),method: :delete, class: "btn btn-danger" %>
+          </li>
+        <% end %>
+     <% end %>
+   <% end %>
+  </ul>
+
+  <h2>Plies</h2>
+
+  <p> Main plies</p>
+
+  <ul>
+    <% @main_plies.each do |ply| %>
+      <li>
+        <span> Game_id: <%= ply.game_id %></span>
+        <span> Ply_id: <%= ply.id %></span>
+        <span>Parent_id: <%= ply.parent_id %></span>
+        <span>Ply_count: <%= ply.ply_count %></span>
+        <span> Ply_move: <%= ply.move %></span>
+        <%= link_to "New comment", new_ply_comment_path(ply), class: "btn btn-primary"  %>
+        <%= link_to "Delete", ply_path(ply),method: :delete,  data: {confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+        <%= link_to "New ply",new_ply_path, class: "btn btn-primary" %>
+      </li>
+    <% end %>
+  </ul>
+
+  <p> Variant plies</p>
+
+  <ul>
+    <% @variant_plies.each do |ply| %>
+      <li>
+        <span> Ply_id: <%= ply.id %></span>
+        <span>Parent_id: <%= ply.parent_id %></span>
+        <span>Ply_count: <%= ply.ply_count %></span>
+        <span> Ply_move: <%= ply.move %></span>
+      </li>
+    <% end %>
+  </ul>
+
+
+</div>
+
+

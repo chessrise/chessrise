@@ -19,18 +19,20 @@ User.destroy_all
 # CREATING RECORDS
 
 p "Creating records"
+
 user1 = User.create!(email: "jcharlesfabre@gmail.com", password: "password")
 
 magnus = Player.create!(first_name: "Magnus", last_name: "Carlsen", title: "GM")
 fabiano = Player.create!(first_name: "Fabiano", last_name: "Caruana", title: "GM")
 
-tag1 = Tag.create!(name: "Sicilian", user: user1)
-tag2 = Tag.create!(name: "Favorites", user: user1)
-tag3 = Tag.create!(name: "Carlsen - Caruana", user: user1)
-tag4 = Tag.create!(name: "My games", user: user1)
-tag5 = Tag.create!(name: "Queen's Indian White", user: user1)
-tag6 = Tag.create!(name: "Beauty Prizes", user: user1)
-tag7 = Tag.create!(name: "Classics", user: user1)
+collection1 = Collection.create!(name: "Sicilian", user: user1)
+collection2 = Collection.create!(name: "Favorites", user: user1)
+collection3 = Collection.create!(name: "Carlsen - Caruana", user: user1)
+collection4 = Collection.create!(name: "My games", user: user1)
+collection5 = Collection.create!(name: "Queen's Indian White", user: user1)
+collection6 = Collection.create!(name: "Beauty Prizes", user: user1)
+collection7 = Collection.create!(name: "Classics", user: user1)
+
 
 game1 = Game.create!(event: "World Chess Championship Match",
                     site: "London",
@@ -42,8 +44,8 @@ game1 = Game.create!(event: "World Chess Championship Match",
                     initial_position: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
                     elo_white: 2832,
                     elo_black: 2835,
-                    white_player_id: fabiano,
-                    black_player_id: magnus)
+                    white_player: fabiano,
+                    black_player: magnus)
 
 p1 = Ply.create!(game: game1, ply_count: 1, parent: nil, move: "e4", status: "main")
 p2 = Ply.create!(game: game1, ply_count: 2, parent: p1, move: "c5", status: "main")
@@ -94,10 +96,10 @@ p5 = Ply.create!(game: game2, ply_count: 5, parent: p4, move: "Dh5", status: "ma
 p6 = Ply.create!(game: game2, ply_count: 6, parent: p5, move: "Cf6", status: "main")
 p7 = Ply.create!(game: game2, ply_count: 7, parent: p6, move: "Dxf7", status: "main")
 
-collection1 = Collection.create!(game: game1, tag: tag1)
-collection2 = Collection.create!(game: game1, tag: tag2)
-collection3 = Collection.create!(game: game1, tag: tag3)
-collection4 = Collection.create!(game: game2, tag: tag7)
+tag1 = Tag.create!(game: game1, collection: collection1)
+tag2 = Tag.create!(game: game1, collection: collection2)
+tag3 = Tag.create!(game: game1, collection: collection3)
+tag4 = Tag.create!(game: game2, collection: collection7)
 
 
 
