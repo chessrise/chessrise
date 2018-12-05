@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :games, only: [:show]
   end
 
+  get '/filtered/:id', to: 'collections#filtered', as: :filtered
+
   resources :games do
     collection do
       get "explore", to: "games#explore"

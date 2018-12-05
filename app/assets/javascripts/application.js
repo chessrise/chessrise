@@ -1,2 +1,2 @@
-//= require_rails-ujs
+//= require rails-ujs
 //= require_tree .

@@ -2,10 +2,17 @@
   margin-bottom: 1px;
   padding: 10px;
   background: #1E5772;
-  color: LightGray;
+  color: white;
   font-size: 14px;
   font-weight: lighter;
   box-shadow: 1px 1px #D6E0E5;
+  display:flex;
+  justify-content: space-between;
+}
+.collection-card > a{
+  color: white;
+  font-size: 14px;
+  font-weight: lighter;
 }
 .collection-card:hover {
   font-style: bold;
@@ -13,3 +20,5 @@
   color: white;
   background-color: #32667E;
 }
+
+

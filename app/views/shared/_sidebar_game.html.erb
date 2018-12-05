@@ -1,0 +1,13 @@
+<nav class="sidebar-header">
+    <% if @collection == "All games" %>
+      <h4> <%= @collection %> </h4>
+    <% else %>
+      <h4><%= @collection.name %></h4>
+    <% end %>
+
+    <% games.each do |game| %>
+      <%= render "shared/sidebar_game_card", game: game %>
+    <% end %>
+
+  </nav>
+

@@ -1,16 +1,23 @@
+<div class="wrapper">
 
-<h1>Your collections</h1>
+  <div class="container-fluid">
+    <div class="row">
 
-<ul>
-  <% current_user.collections.each do |collection| %>
-    <li>
-      <%= collection.name %>
-      <%= link_to "See games in collection",collection_path(collection)  %>
-    </li>
-  <% end %>
-</ul>
+      <%= render "shared/sidebar_collection" %>
+
+      <div class="col-sm-2" id="sidebar-games">
+        <%= render "shared/sidebar_game", games: @games %>
+      </div>
+
+    </div>
+  </div>
 
 
-<p class="collection-card">My favorite list</p>
-<p class="collection-card">All games</p>
+  <!-- Page Content -->
+  <div id="content">
+      <!-- We'll fill this with dummy content -->
+  </div>
+
+</div>
+
 
