@@ -1,6 +1,4 @@
 class Tag < ApplicationRecord
-  belongs_to :user
-
-  has_many :collections
-  has_many :games, through: :collections
+  belongs_to :game
+  belongs_to :collection
 end
