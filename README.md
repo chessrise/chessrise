@@ -13,6 +13,7 @@ Google doc (https://drive.google.com/drive/folders/1TSQp1Gel46M3QlVHBrx6NhfxWPRU
 ### js libraries
 * [chess.js](https://github.com/jhlywa/chess.js/blob/master/README.md)
 * [chessboard.js](http://chessboardjs.com/)
+* Chessground docu (https://www.diycode.cc/projects/ornicar/chessground)
 * [stockfish.js](https://github.com/exoticorn/stockfish-js)
   * [Example with stockfish and chess.js](https://github.com/exoticorn/stockfish-js/blob/master/example/enginegame.js)
 
