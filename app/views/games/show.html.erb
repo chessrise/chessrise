@@ -54,6 +54,7 @@
   <%= link_to "New Player", new_player_path, class: "btn btn-primary"  %>
   <%= link_to "New Collection", new_collection_path, class: "btn btn-primary"  %>
 
+
   <h2>TO DO</h2>
   <ul>
     <li>Add comment to ply</li>
@@ -63,10 +64,15 @@
   </ul>
 
   <h2>Game collections</h2>
-  <ul>
+
+
+  <ul class="list-inline">
     <% @game.collections.each do |collection| %>
-      <li><%= collection.name %></li>
+      <li class="list-inline-item"> <h4><span class="badge badge-secondary"><%= collection.name %></span></h4></li>
     <% end %>
+  </ul>
+
+
   </ul>
 
 
@@ -131,7 +137,8 @@
         <span>Ply_count: <%= ply.ply_count %></span>
         <span> Ply_move: <%= ply.move %></span>
         <%= link_to "New comment", new_ply_comment_path(ply), class: "btn btn-primary"  %>
-        <%= link_to "Delete", ply_path(ply),method: :delete,  data: {confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+        <%= link_to "Delete", ply_path(ply), method: :delete,  data: {confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+        <%#= link_to "effacer", ply_path(ply), method: :delete, class: "btn" %>
         <%= link_to "New ply",new_ply_path, class: "btn btn-primary" %>
       </li>
     <% end %>

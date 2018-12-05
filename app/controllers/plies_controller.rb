@@ -24,7 +24,9 @@ class PliesController < ApplicationController
 
   def destroy
     @ply = Ply.find(params[:id])
-    @game = Game.find(@ply.game_id)
+    @game = @ply.game
+    # binding.pry
+    raise
     @ply.destroy
     redirect_to game_path(@game)
   end

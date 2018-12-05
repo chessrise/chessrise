@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :players
-
-  resources :plies do
-    resources :comments, only: [:edit, :show, :new, :destroy]
+  resources :plies, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    resources :comments, only: [:edit, :show, :new, :create]
   end
 
   resources :collections do
@@ -19,3 +18,4 @@ Rails.application.routes.draw do
     end
   end
 end
+
