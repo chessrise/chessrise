@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :players
-  resources :plies, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :comments, only: [:edit, :show, :new, :create]
+
+  resources :plies, only do [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :comments, only: [:edit, :show, :new, :destroy, :create]
   end
 
   resources :collections do
     resources :games, only: [:show]
   end
+
+  get '/filtered/:id', to: 'collections#filtered', as: :filtered
 
   resources :games do
     collection do

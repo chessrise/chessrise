@@ -102,6 +102,33 @@ tag3 = Tag.create!(game: game1, collection: collection3)
 tag4 = Tag.create!(game: game2, collection: collection7)
 
 
+game2 = Game.create!(event: "World Chess Championship Match",
+                    site: "London",
+                    date: DateTime.new(2018,11,15,14),
+                    round: 1,
+                    result: "1/2 - 1/2",
+                    ply_count_total: 50,
+                    eco_code: "B33",
+                    initial_position: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+                    elo_white: 2832,
+                    elo_black: 2835,
+                    white_player: magnus,
+                    black_player: fabiano)
+
+game3 = Game.create!(event: "World Chess Championship Match",
+                    site: "London",
+                    date: DateTime.new(2018,11,15,14),
+                    round: 2,
+                    result: "1/2 - 1/2",
+                    ply_count_total: 50,
+                    eco_code: "B33",
+                    initial_position: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+                    elo_white: 2832,
+                    elo_black: 2835,
+                    white_player: fabiano,
+                    black_player: magnus)
+
+
 
 
 
