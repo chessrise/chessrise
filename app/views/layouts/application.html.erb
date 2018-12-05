@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Add these line for detecting device width -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>ChessRise</title>
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto+Mono:300,400,700" rel="stylesheet"> -->
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <link rel="icon" href="<%= image_path('favicon.ico') %>" />
@@ -11,6 +14,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <%= render "shared/navbar" %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
