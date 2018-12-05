@@ -1,18 +1,10 @@
 
 <div class="navbar-wagon <%= yield(:navbar_class) %>">
-  <!-- NAVBAR CONTENT -->
-  <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <img src="<%= image_path('chess-rise-logo.png') %>" alt="logo">
-  </a>
-
-<!-- <div class="navbar <%= yield(:navbar_class) %>"> -->
-
 
   <!-- Left Navigation -->
   <div class="navbar-left hidden-xs hidden-sm">
     <a href="/" class="navbar-brand">
-      <img src="images/logo.png" alt="logo">
+      <img src="<%= image_path('chess-rise-logo.png') %>" alt="logo">
     </a>
     <a href=""><i class="far fa-window-restore navbar-item navbar-link"></i></a>
     <a href=""><i class="fas fa-trash-alt navbar-item navbar-link"></i></a>
@@ -23,7 +15,7 @@
   <div class="navbar-right hidden-xs hidden-sm">
     <div class="navbar-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <!-- <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#" style={color: }> Profile </a></li>
           <li><a href="#"> Log Out </a></li>
