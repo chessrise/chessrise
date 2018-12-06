@@ -56,6 +56,26 @@
         </div>
       </div>
 
+    <div class="btn-group-toggle" data-toggle="buttons">
+      <% @game.collections.each do |collection| %>
+      <label class="btn btn-secondary active">
+        <input type="checkbox" checked autocomplete="off"><%= collection.name %>
+      </label>
+      <% end %>
+    </div>
+
+
+    <div>
+      <ul class="list-inline">
+        <% @game.collections.each do |collection| %>
+        <li class="list-inline-item">
+          <h4><span class="badge badge-secondary"><%= collection.name %></span>
+          </h4>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
     </div>
   </div>
 </div>
