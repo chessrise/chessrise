@@ -1,11 +1,8 @@
 import { Chessground } from "chessground";
 import Chess from 'chess.js'
 
-const toggleBoardOrientation = () => {
- document.getElementById("board-toggle").addEventListener("click", () => {
-    const chessgame = Chessground(document.getElementById("chessgame"));
-    chessgame.toggleOrientation();
- });
+const toggleBoard = (cg) => {
+    cg.toggleOrientation();
 };
 
 const toDests = (chess) => {
@@ -34,8 +31,7 @@ const playOtherSide = (cg, chess) => {
   };
 }
 
-const initialPosition = () => {
-  const chess = new Chess();
+const initialPosition = (chess) => {
   const cg = Chessground(document.getElementById("chessgame"),
    {movable: {
       color: 'white',
@@ -52,56 +48,43 @@ const initialPosition = () => {
   return cg;
 };
 
-const displayGameInitialPosition = () => {
- document.getElementById("pgn-reset").addEventListener("click", () => {
-  initialPosition()});
-};
-
-
-const playNextMove = (chess, cg, moves) => {
-  document.getElementById("next-move").addEventListener("click", () => {
-    console.log("next");
-    console.log(moves.length-1);
-    if (i <= moves.length) {
+const playNext = (chess, cg, moves) => {
+    if (i < moves.length) {
       console.log(i);
       chess.move(moves[i].innerText);
       cg.set( { fen: chess.fen() } );
-      if (i< moves.length) {
-        i += 1;
-        console.log(i);
-      }
-      return cg;
+      i += 1;
     };
-  });
 };
 
-const playPreviousMove = (chess, cg, moves) => {
-  document.getElementById("previous-move").addEventListener("click", () => {
-    console.log("previous");
+const playPrevious = (chess, cg, moves) => {
     if (i > 0) {
-      console.log(moves[i].innerText);
       chess.undo();
       cg.set( { fen: chess.fen() } );
       console.log(i)
       i -= 1;
-      return cg;
     }
-  });
 };
 
 let i = 0;
-const arrowControls = () => {
-  const moves = document.querySelectorAll(".moves");
+
+function initChessground() {
+  i = 0;
   const chess = new Chess();
-  const cg = Chessground(document.getElementById("chessgame"));
-  playNextMove(chess, cg, moves);
-  playPreviousMove(chess, cg, moves);
+  const cg = initialPosition(chess);
+  const moves = document.querySelectorAll(".moves");
+  document.getElementById("next-move").addEventListener("click", () => {
+    playNext(chess, cg, moves)
+  });
+  document.getElementById("previous-move").addEventListener("click", () => {
+    playPrevious(chess, cg, moves)
+  });
+  document.getElementById("board-toggle").addEventListener("click", () => {
+    toggleBoard(cg)
+  });
 }
 
-export { toggleBoardOrientation };
-export { displayGameInitialPosition };
-export { initialPosition };
-export { arrowControls };
+export { initChessground };
 
 
 

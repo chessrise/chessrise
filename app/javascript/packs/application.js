@@ -5,22 +5,14 @@ if(document.getElementById("banner")) {
   loadDynamicBannerText();
 }
 
-import { initChessground } from "../components/init_chessground";
-import { toggleBoardOrientation } from '../components/chessgame'
-import { displayGameInitialPosition } from '../components/chessgame'
-import { initialPosition } from '../components/chessgame'
-import { arrowControls } from '../components/chessgame'
-
+import { initChessground } from "../components/chessgame";
 
 if(document.getElementById("chessgame")) {
-  toggleBoardOrientation();
-  displayGameInitialPosition();
-  initialPosition();
-  arrowControls();
+  initChessground();
 }
 
 window.initChessground = initChessground;
-// initChessground();
+
 
 
 
