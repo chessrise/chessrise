@@ -4,7 +4,6 @@
       <div id="chessgame"></div>
       <div class="btn btn-primary" id="board-toggle">Toggle</div>
       <div class="btn btn-primary" id="pgn-reset">Reset</div>
-      <div class="btn btn-primary" id="e4">e4</div>
       <div class="btn btn-primary" id="previous-move"> < </div>
       <div class="btn btn-primary" id="next-move"> > </div>
     </div>
@@ -48,7 +47,7 @@
           <% @game.plies.each do |ply| %>
             <% if ply.status == "main" %>
               <span> <%= ply.display_move_number %></span>
-              <span id="move"> <%= ply.move  %></span>
+              <span class="moves"> <%= ply.move  %></span>
             <% end %>
           <% end %>
         </div>
