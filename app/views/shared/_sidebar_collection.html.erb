@@ -1,20 +1,23 @@
 <div class="col-sm-2" id="sidebar-collection">
-  <nav class="sidebar-header">
-      <h4>My collections</h4>
-      <ul class="list-inline">
+  <div class="sidebar-header">
+      <p>My collection</p>
+  </div>
+  <div>
         <% @collections.each do |collection| %>
-          <li>
             <div class="collection-card">
               <%= link_to filtered_path(collection), remote: true do  %>
-                <%= collection.name  %>
+                <%= collection.name %>
               <% end %>
               <%= link_to edit_collection_path(collection) do %>
                 <i class="fas fa-pencil-alt"></i>
               <% end %>
             </div>
-          </li>
         <% end %>
-      </ul>
-      <%= link_to "Add a collection", new_collection_path, class: "btn btn-primary"  %>
-  </nav>
+  </div>
+  <div class="pin-left-bottom">
+    <%= link_to new_collection_path do %>
+      <i class="fas fa-folder-plus" style="color:#1E5772"></i>
+    <% end %>
+
+  </div>
 </div>
