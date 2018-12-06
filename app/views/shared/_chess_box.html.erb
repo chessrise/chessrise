@@ -56,14 +56,12 @@
         </div>
       </div>
 
-<!--     <div class="btn-group-toggle" data-toggle="buttons">
-      <% @game.collections.each do |collection| %>
-      <label class="btn btn-secondary active">
-        <input type="checkbox" checked autocomplete="off"><%= collection.name %>
-      </label>
+    <div class="chess-moves">
+      <% game.main_sorted_plies.each do |ply| %>
+          <span> <%= ply.display_move_number %></span>
+          <span class="moves"> <%= ply.move  %></span>
       <% end %>
-    </div> -->
-
+    </div>
 
     <div>
       <ul class="list-inline">
