@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(version: 2018_12_04_133859) do
   enable_extension "plpgsql"
 
   create_table "collections", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id"
+    t.bigint "game_id"
+    t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_collections_on_user_id"
+    t.index ["game_id"], name: "index_collections_on_game_id"
+    t.index ["tag_id"], name: "index_collections_on_tag_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -71,12 +72,11 @@ ActiveRecord::Schema.define(version: 2018_12_04_133859) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.bigint "game_id"
-    t.bigint "collection_id"
+    t.string "name"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["collection_id"], name: "index_tags_on_collection_id"
-    t.index ["game_id"], name: "index_tags_on_game_id"
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,13 +91,13 @@ ActiveRecord::Schema.define(version: 2018_12_04_133859) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "collections", "users"
+  add_foreign_key "collections", "games"
+  add_foreign_key "collections", "tags"
   add_foreign_key "comments", "plies"
   add_foreign_key "games", "players", column: "black_player_id"
   add_foreign_key "games", "players", column: "white_player_id"
   add_foreign_key "plies", "games"
   add_foreign_key "plies", "plies", column: "parent_id"
   add_foreign_key "plies", "plies", column: "parent_id"
-  add_foreign_key "tags", "collections"
-  add_foreign_key "tags", "games"
+  add_foreign_key "tags", "users"
 end
