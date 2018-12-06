@@ -66,12 +66,6 @@ p16 = Ply.create!(game: game1, ply_count: 16, parent: p15, move: "Ne7", status: 
 p17 = Ply.create!(game: game1, ply_count: 17, parent: p16, move: "c4", status: "main")
 p18 = Ply.create!(game: game1, ply_count: 18, parent: p17, move: "Ng6", status: "main")
 p19 = Ply.create!(game: game1, ply_count: 19, parent: p18, move: "Qa4", status: "main")
-p20 = Ply.create!(game: game1, ply_count: 20, parent: p19, move: "Bb7", status: "main")
-p21 = Ply.create!(game: game1, ply_count: 21, parent: p20, move: "Qb4", status: "main")
-p22 = Ply.create!(game: game1, ply_count: 22, parent: p21, move: "Bf5", status: "main")
-p23 = Ply.create!(game: game1, ply_count: 23, parent: p22, move: "h4", status: "main")
-p24 = Ply.create!(game: game1, ply_count: 24, parent: p23, move: "h5", status: "main")
-p25 = Ply.create!(game: game1, ply_count: 25, parent: p24, move: "Qa4", status: "main")
 
 p26 = Ply.create!(game: game1, ply_count: 4, parent: p3, move: "e6", status: "variant")
 p27 = Ply.create!(game: game1, ply_count: 5, parent: p26, move: "d4", status: "variant")
@@ -80,7 +74,7 @@ p28 = Ply.create!(game: game1, ply_count: 6, parent: p27, move: "Qxd4", status: 
 
 
 comment1 = Comment.create!(commenter: "JC", ply: p10, content: "Another Schevnichov")
-comment2 = Comment.create!(commenter: "JC", ply: p25, content: "The game continued but it ended in a draw")
+comment2 = Comment.create!(commenter: "JC", ply: p19, content: "The game continued but it ended in a draw")
 
 
 game2 = Game.create!(result: "1 - 0",

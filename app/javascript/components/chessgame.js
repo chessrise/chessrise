@@ -58,28 +58,33 @@ const displayGameInitialPosition = () => {
 };
 
 
-
-
-
 const playNextMove = (chess, cg, moves) => {
   document.getElementById("next-move").addEventListener("click", () => {
-    console.log(moves[i].innerText);
-    chess.move(moves[i].innerText);
-    cg.set( { fen: chess.fen() } );
-    i += 1;
-    return cg;
-    });
+    console.log(moves.length-1);
+    if (i <= moves.length) {
+      console.log(i);
+      chess.move(moves[i].innerText);
+      cg.set( { fen: chess.fen() } );
+      if (i< moves.length) {
+        i += 1;
+        console.log(i);
+      }
+      return cg;
+    };
+  });
 };
 
 const playPreviousMove = (chess, cg, moves) => {
   document.getElementById("previous-move").addEventListener("click", () => {
-    console.log(moves[i].innerText);
-    // chess.move(moves[i].innerText);
-    chess.undo();
-    cg.set( { fen: chess.fen() } );
-    i -= 1;
-    return cg;
-    });
+    if (i > 0) {
+      console.log(moves[i].innerText);
+      chess.undo();
+      cg.set( { fen: chess.fen() } );
+      console.log(i)
+      i -= 1;
+      return cg;
+    }
+  });
 };
 
 let i = 0;
@@ -91,30 +96,11 @@ const arrowControls = () => {
   playPreviousMove(chess, cg, moves);
 }
 
-// const makeTextMove = (chess, cg, move) => {
-//   chess.move(move.innerText);
-//   cg.set( {fen: chess.fen() } );
-//   return cg;
-// };
-
-
-// const printMoves = () => {
-//   const chess = new Chess();
-//   const chessgame = Chessground(document.getElementById("chessgame"));
-//   const moves = document.querySelectorAll(".moves");
-//   moves.forEach( move => {
-//     setInterval( makeTextMove(chess, chessgame, move ), 3000 );
-//   });
-// };
-
-
 export { toggleBoardOrientation };
 export { displayGameInitialPosition };
 export { initialPosition };
-// export { playNextMove };
-// export { playPreviousMove };
 export { arrowControls };
-// export { printMoves };
+
 
 
 
