@@ -4,28 +4,28 @@
     <div class="game-card-header">
       <div class="game-card-players">
         <% if game.white_player.present? && game.black_player.present? %>
-          <span> <%=game.white_player.first_name%></span>
+          <span> <%=game.white_player.last_name%></span>
           <span> - </span>
-          <span> <%=game.black_player.first_name%></span>
+          <span> <%=game.black_player.last_name%></span>
           <span> <%=game.result%></span>
         <% else %>
           <span> <%=game.name%></span>
         <% end %>
       </div>
-      <div class="game-card-description">
+<!--       <div class="game-card-description">
         <span> <%= game.event %> |</span>
         <span> <%= game.site %> | </span>
         <span> <%= game.date %> |</span>
         <span> Round <%= game.round %> |</span>
         <span> ECO <%= game.eco_code %></span>
-      </div>
+      </div> -->
     </div>
-    <div class="game-card-moves">
+<!--     <div class="game-card-moves">
       <% game.plies[0..10].each do |ply| %>
         <span> <%=ply.display_move_number %></span>
         <span><%= ply.move %></span>
       <% end %>
-    </div>
+    </div> -->
   </div>
 
 <% end %>

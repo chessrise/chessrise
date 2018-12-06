@@ -71,6 +71,7 @@ class ImportGamesFromPGNService
                     game: game,
                     ply_count: index + 1,
                     move: kingbase_ply.notation,
+                    status: "main",
                     fen: kingbase_game.fen_list[index]
                   )
       end
