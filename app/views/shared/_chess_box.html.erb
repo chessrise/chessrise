@@ -1,133 +1,81 @@
 <div class="chess-box col-sm-8" id="chessbox">
 
-  <div class="board">
-    <div id="chessgame"></div>
-    <div class="chess-controls">
-      <div class="btn btn-primary" id="board-toggle"><img class="touches" src="<%= image_path('rotating.png') %>" alt="play_game"></div>
-      <div class="btn btn-primary" id="previous-move"><img class="touches" src="<%= image_path('backward-arrow.png') %>" alt="play_game"></div>
-      <div class="btn btn-primary" id="next-move"><img class="touches" src="<%= image_path('arrow-point-to-right.png') %>" alt="play_game"></div>
-    </div>
-  </div>
-
-  <div class="game-notation">
-
-    <div class="chess-headers">
-      <% if game.white_player.present? && game.black_player.present? %>
-        <div class="player">
-          <p>
-            <i class="fas fa-chess-pawn" id="white-pawn"></i>
-            <span><%= game.white_player.fullname %></span>
-            <%= link_to edit_player_path(game.white_player) do %>
-              <i class="fas fa-pencil-alt"></i>
-            <% end %>
-          </p>
-        </div>
-        <div class="player">
-          <p>
-            <i class="fas fa-chess-pawn" id="black-pawn"></i>
-            <span><%= game.black_player.fullname %></span>
-            <%= link_to edit_player_path(game.black_player) do %>
-              <i class="fas fa-pencil-alt"></i>
-            <% end %>
-          </p>
-        </div>
-      <% else %>
-        <span> <%= game.name %></span>
-      <% end %>
-      <div class="chess-description">
-        <p> <%= game.event %> | <%= game.site %> | <%= game.date %>  <i class="fas fa-pencil-alt"></i>
-        </p>
-      </div>
-    </div>
-
-    <div class="chess-moves">
-      <% game.plies.each do |ply| %>
-        <% if ply.status == "main" %>
-          <span> <%= ply.display_move_number %></span>
-          <span class="moves"> <%= ply.move  %></span>
-        <% end %>
-      <% end %>
-    </div>
-
-
-  </div>
-
-
-
-<!--   <div class="row">
-    <div class="col-sm-12">
-
-      <div class="chess-headers">
-
-        <div class="players">
-          <% if game.white_player.present? && game.black_player.present? %>
-            <div class="white-player" id="white-player">
-              <p>
-                <span><%= game.white_player.fullname %></span>
-                <span>(<%= game.white_player.title %>)</span>
-                <%= link_to edit_player_path(game.white_player) do %>
-                  <i class="fas fa-pencil-alt"></i>
-                <% end %>
-              </p>
-            </div>
-            <div class="black-player" id="black-player">
-              <p>
-                <span><%= game.black_player.fullname %></span>
-                <span>(<%= game.black_player.title %>)</span>
-                <%= link_to edit_player_path(game.black_player) do %>
-                  <i class="fas fa-pencil-alt"></i>
-                <% end %>
-              </p>
-            </div>
-          <% else %>
-            <span> <%= game.name %></span>
-          <% end %>
-        </div>
-
-        <div class="chess-description">
-          <p> <%= game.event %> | <%= game.site %> | <%= game.date %>  <i class="fas fa-pencil-alt"></i>
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <div class="row">
     <div class="col-sm-4">
       <div id="chessgame"></div>
+<!--       <div class="btn btn-primary" id="pgn-reset"><img class="touches" src="<%= image_path('flip.png') %>" alt="toogle"></div> -->
+      <div class="btn btn-primary" id="board-toggle"><img class="touches" src="<%= image_path('rotating.png') %>" alt="play_game"></div>
+<!--       <div class="btn btn-primary" id="play"><img class="touches" src="<%= image_path('play.png') %>" alt="play_game"></div> -->
+<!--       <div class="btn btn-primary" id="first-move"><img class="touches" src="<%= image_path('first_move.png') %>" alt="play_game"></div> -->
+      <div class="btn btn-primary" id="previous-move"><img class="touches" src="<%= image_path('backward-arrow.png') %>" alt="play_game"></div>
+      <div class="btn btn-primary" id="next-move"><img class="touches" src="<%= image_path('arrow-point-to-right.png') %>" alt="play_game"></div>
+ <!--      <div class="btn btn-primary" id="last-move"><img class="touches" src="<%= image_path('fast-forward-button.png') %>" alt="play_game"></div> -->
     </div>
+
     <div class="col-sm-4">
-      <div class="chess-moves">
-        <% game.plies.each do |ply| %>
-          <% if ply.status == "main" %>
-            <span> <%= ply.display_move_number %></span>
-            <span class="moves"> <%= ply.move  %></span>
+      <div class="chess-notations">
+        <div class="chess-headers">
+
+          <div class="players">
+            <% if game.white_player.present? && game.black_player.present? %>
+              <div class="white-player card-notations-header" id="white-player">
+                <p>
+                  <span><%= game.white_player.fullname %></span>
+                  <span>(<%= game.white_player.title %>)</span>
+                  <%= link_to edit_player_path(game.white_player) do %>
+                    <i class="fas fa-pencil-alt"></i>
+                  <% end %>
+                </p>
+              </div>
+              <div class="black-player card-notations-header" id="black-player">
+                <p>
+                  <span><%= game.black_player.fullname %></span>
+                  <span>(<%= game.black_player.title %>)</span>
+                  <%= link_to edit_player_path(game.black_player) do %>
+                    <i class="fas fa-pencil-alt"></i>
+                  <% end %>
+                </p>
+              </div>
+            <% else %>
+              <span> <%= game.name %></span>
+            <% end %>
+
+          </div>
+
+          <div class="description collection-card">
+            <p> <%= game.event %> | <%= game.site %> | <%= game.date %>  <i class="fas fa-pencil-alt"></i>
+            </p>
+          </div>
+        </div>
+        <div class="chess-moves">
+          <% game.plies.each do |ply| %>
+            <% if ply.status == "main" %>
+              <span> <%= ply.display_move_number %></span>
+              <span class="moves"> <%= ply.move  %></span>
+            <% end %>
           <% end %>
+        </div>
+      </div>
+
+<!--     <div class="btn-group-toggle" data-toggle="buttons">
+      <% @game.collections.each do |collection| %>
+      <label class="btn btn-secondary active">
+        <input type="checkbox" checked autocomplete="off"><%= collection.name %>
+      </label>
+      <% end %>
+    </div> -->
+
+
+    <div>
+      <ul class="list-inline">
+        <% @game.collections.each do |collection| %>
+        <li class="list-inline-item">
+          <h5><span class="badge badge-secondary"><%= collection.name %></span>
+          </h5>
+        </li>
         <% end %>
-      </div>
+      </ul>
+    </div>
+
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="game-collections">
-        <ul class="list-inline">
-          <% @game.collections.each do |collection| %>
-          <li class="list-inline-item">
-            <h6><span class="badge badge-secondary"><%= collection.name %></span>
-            </h6>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="chess-controls">
-        <div class="btn btn-primary" id="board-toggle"><img class="touches" src="<%= image_path('rotating.png') %>" alt="play_game"></div>
-        <div class="btn btn-primary" id="previous-move"><img class="touches" src="<%= image_path('backward-arrow.png') %>" alt="play_game"></div>
-        <div class="btn btn-primary" id="next-move"><img class="touches" src="<%= image_path('arrow-point-to-right.png') %>" alt="play_game"></div>
-      </div>
-    </div>
-  </div>
-
-</div> -->
+</div>
