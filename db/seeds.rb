@@ -130,9 +130,10 @@ game3 = Game.create!(event: "World Chess Championship Match",
 
 
 
-
-
-
+# CREATING LOTS OF GAMES FROM KINGBASE
+# you can find the file code in db/fixtures
+# you can find the code in app/services
+ImportGamesFromPGNService.new("db/fixtures/KingBase.pgn").call
 
 
 
