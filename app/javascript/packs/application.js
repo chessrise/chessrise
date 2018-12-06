@@ -1,7 +1,7 @@
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 
-if(document.getElementById("banner")) {
+if(document.querySelector(".banner")) {
 loadDynamicBannerText();
 }
 
