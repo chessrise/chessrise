@@ -1,17 +1,23 @@
-
 #sidebar-collection {
-    background: $brand-primary;
-    color: #fff;
-    transition: all 0.3s;
-    padding: 0;
+  position: relative;
+  background-image: linear-gradient(to bottom right, #EDEDEE , white);
+  transition: all 0.3s;
+  padding: 0;
 }
 
-#sidebar .sidebar-header {
-    width: 100%;
-    padding: 20px;
-    background: #6d7fcc;
+.sidebar-header {
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
+.pin-left-bottom {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 30px;
+}
 // #sidebar ul.components {
 //     padding: 20px 0;
 //     border-bottom: 1px solid #47748b;
