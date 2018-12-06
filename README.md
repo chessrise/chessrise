@@ -17,6 +17,8 @@ Google doc (https://drive.google.com/drive/folders/1TSQp1Gel46M3QlVHBrx6NhfxWPRU
 * [stockfish.js](https://github.com/exoticorn/stockfish-js)
   * [Example with stockfish and chess.js](https://github.com/exoticorn/stockfish-js/blob/master/example/enginegame.js)
 
+### PGN gem
+* [PGN gem](https://www.rubydoc.info/gems/pgn/0.2.0/index)
 ### PGN database
 * [Kingbase](http://www.kingbase-chess.net/)
 * For storing tree structured data (https://github.com/ClosureTree/closure_tree)
