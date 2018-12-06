@@ -1,7 +1,7 @@
 import "bootstrap";
-
 import { loadDynamicBannerText } from '../components/banner';
 import { initChessground } from "../components/init_chessground";
+
 
 window.initChessground = initChessground;
 initChessground();
