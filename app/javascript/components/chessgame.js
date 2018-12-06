@@ -60,6 +60,7 @@ const displayGameInitialPosition = () => {
 
 const playNextMove = (chess, cg, moves) => {
   document.getElementById("next-move").addEventListener("click", () => {
+    console.log("next");
     console.log(moves.length-1);
     if (i <= moves.length) {
       console.log(i);
@@ -76,6 +77,7 @@ const playNextMove = (chess, cg, moves) => {
 
 const playPreviousMove = (chess, cg, moves) => {
   document.getElementById("previous-move").addEventListener("click", () => {
+    console.log("previous");
     if (i > 0) {
       console.log(moves[i].innerText);
       chess.undo();
