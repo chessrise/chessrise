@@ -1,4 +1,4 @@
-class CollectionsController < ApplicationController
+ class CollectionsController < ApplicationController
   def index
     @collection = "All games"
     @collections = Collection.all

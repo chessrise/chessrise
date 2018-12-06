@@ -1,4 +1,4 @@
-<div class="chess-box col-sm-8">
+<div class="chess-box col-sm-8" id="chessbox">
 
     <div class="col-sm-4">
       <div id="chessgame"></div>
@@ -14,38 +14,38 @@
         <div class="chess-headers">
 
           <div class="players">
-            <% if @game.white_player.present? && @game.black_player.present? %>
-              <div class="white-player card-notations-header">
+            <% if game.white_player.present? && game.black_player.present? %>
+              <div class="white-player card-notations-header" id="white-player">
                 <p>
-                  <span><%= @game.white_player.fullname %></span>
-                  <span>(<%= @game.white_player.title %>)</span>
-                  <%= link_to edit_player_path(@game.white_player) do %>
+                  <span><%= game.white_player.fullname %></span>
+                  <span>(<%= game.white_player.title %>)</span>
+                  <%= link_to edit_player_path(game.white_player) do %>
                     <i class="fas fa-pencil-alt"></i>
                   <% end %>
                 </p>
               </div>
-              <div class="black-player card-notations-header">
+              <div class="black-player card-notations-header" id="black-player">
                 <p>
-                  <span><%= @game.black_player.fullname %></span>
-                  <span>(<%= @game.black_player.title %>)</span>
-                  <%= link_to edit_player_path(@game.black_player) do %>
+                  <span><%= game.black_player.fullname %></span>
+                  <span>(<%= game.black_player.title %>)</span>
+                  <%= link_to edit_player_path(game.black_player) do %>
                     <i class="fas fa-pencil-alt"></i>
                   <% end %>
                 </p>
               </div>
             <% else %>
-              <span> <%= @game.name %></span>
+              <span> <%= game.name %></span>
             <% end %>
 
           </div>
 
           <div class="description collection-card">
-            <p> <%= @game.event %> | <%= @game.site %> | <%= @game.date %>  <i class="fas fa-pencil-alt"></i>
+            <p> <%= game.event %> | <%= game.site %> | <%= game.date %>  <i class="fas fa-pencil-alt"></i>
             </p>
           </div>
         </div>
         <div class="chess-moves">
-          <% @game.plies.each do |ply| %>
+          <% game.plies.each do |ply| %>
             <% if ply.status == "main" %>
               <span> <%= ply.display_move_number %></span>
               <span id="move"> <%= ply.move  %></span>

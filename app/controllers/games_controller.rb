@@ -30,6 +30,14 @@ class GamesController < ApplicationController
   def destroy
   end
 
+  def chessbox
+    @game = Game.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to collections_path }
+      format.js
+    end
+  end
+
   private
 
   def calculate_eco
