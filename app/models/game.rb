@@ -6,7 +6,7 @@ class Game < ApplicationRecord
   belongs_to :black_player, class_name: "Player", optional: true
 
   def main_sorted_plies
-    main_plies = plies.select { |p| p.status = "main" }
-    main_plies.sort_by { |p| p.ply_count }
+    main_plies = plies.select { |p| p.status == "main" }
+    return main_plies.sort_by { |p| p.ply_count }
   end
 end
