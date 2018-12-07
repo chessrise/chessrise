@@ -1,5 +1,3 @@
-console.log('yessss');
-
 function emptyGameSidebar() {
   const gameSidebar = document.getElementById("sidebar-games");
   gameSidebar.innerHTML = "";
@@ -15,6 +13,16 @@ emptyGameSidebar();
 populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>')
 
 
+document.getElementById("chessbox").innerHTML = "";
+
+function populateChessBox(chessboxHTML) {
+  const chessbox = document.getElementById("chessbox");
+  chessbox.outerHTML = chessboxHTML;
+};
+
+populateChessBox('<%= j render "shared/chess_box", game: @game %>')
+
+window.initChessground();
 
 
 
