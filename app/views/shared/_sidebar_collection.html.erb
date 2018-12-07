@@ -3,21 +3,20 @@
       <p>My collection</p>
   </div>
   <div>
-        <% @collections.each do |collection| %>
-            <div class="collection-card">
-              <%= link_to filtered_path(collection), remote: true do  %>
-                <%= collection.name %>
-              <% end %>
-<!--               <%= link_to edit_collection_path(collection) do %>
-                <i class="fas fa-pencil-alt"></i>
-              <% end %> -->
-            </div>
+    <% @collections.each do |collection| %>
+        <%= link_to filtered_path(collection), remote: true do  %>
+          <div class="collection-card">
+            <p><%= collection.name %></p>
+          </div>
         <% end %>
+<!--               <%#= link_to edit_collection_path(collection) do %>
+            <i class="fas fa-pencil-alt"></i>
+          <%# end %> -->
+    <% end %>
   </div>
   <div class="pin-left-bottom">
     <%= link_to new_collection_path do %>
       <i class="fas fa-folder-plus" style="color:#1E5772"></i>
     <% end %>
-
   </div>
 </div>
