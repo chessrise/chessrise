@@ -1,8 +1,10 @@
 #sidebar-games {
-    min-height: 100vh;
+    height: 100vh;
     background: White;
     transition: all 0.3s;
     padding: 0;
-    border: solid 1px lightgrey;
+    border-left: solid 1px lightgrey;
+    border-right: solid 1px lightgrey;
+    overflow-y: scroll;
 }
 

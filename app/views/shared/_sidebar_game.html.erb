@@ -1,17 +1,17 @@
 <div class="sidebar-games">
 
   <div class="sidebar-header">
-      <% if @collection == "All games" %>
-        <p> <%= @collection %> </p>
-      <% else %>
-        <p><%= @collection.name %></p>
-      <% end %>
+    <% if @collection == "All games" %>
+      <p> <%= @collection %> </p>
+    <% else %>
+      <p><%= @collection.name %></p>
+    <% end %>
   </div>
 
-  <div>
-      <% games.each do |game| %>
-        <%= render "shared/sidebar_game_card", game: game %>
-      <% end %>
+  <div class="list-of-games">
+    <% games.each do |game| %>
+      <%= render "shared/sidebar_game_card", game: game %>
+    <% end %>
   </div>
 </div>
 
