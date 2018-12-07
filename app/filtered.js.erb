@@ -1,29 +1,29 @@
-// console.log('yessss');
+// // console.log('yessss');
 
-function emptyGameSidebar() {
-  const gameSidebar = document.getElementById("sidebar-games");
-  gameSidebar.innerHTML = "";
-};
+// function emptyGameSidebar() {
+//   const gameSidebar = document.getElementById("sidebar-games");
+//   gameSidebar.innerHTML = "";
+// };
 
-function populateGameSideBar(gameSidebarHTML) {
-  const gameSidebar = document.getElementById("sidebar-games");
-  gameSidebar.insertAdjacentHTML('beforeend', gameSidebarHTML);
-};
+// function populateGameSideBar(gameSidebarHTML) {
+//   const gameSidebar = document.getElementById("sidebar-games");
+//   gameSidebar.insertAdjacentHTML('beforeend', gameSidebarHTML);
+// };
 
-emptyGameSidebar();
-// selectCard();
-populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
+// emptyGameSidebar();
+// // selectCard();
+// populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
 
-function selectCard() {
-  const collections = document.querySelectorAll('.collection-card');
-  collections.forEach((element) => {
-      element.addEventListener('click', (event) => {
-        collections.forEach((element) => {
-        element.classList.remove('collection-card-persist');
-      });
-      element.classList.add('collection-card-persist');
-    })
-  });
-};
+// function selectCard() {
+//   const collections = document.querySelectorAll('.collection-card');
+//   collections.forEach((element) => {
+//       element.addEventListener('click', (event) => {
+//         collections.forEach((element) => {
+//         element.classList.remove('collection-card-persist');
+//       });
+//       element.classList.add('collection-card-persist');
+//     })
+//   });
+// };
 
-export { selectCard };
+// export { selectCard };

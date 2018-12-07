@@ -132,7 +132,7 @@ user1 = User.create!(email: "jcharlesfabre@gmail.com", password: "password")
 
 
 ImportGamesFromPGNService.new("db/fixtures/wcc18_games.pgn","Carlsen - Caruana WCC 18", user1 ).call
-ImportGamesFromPGNService.new("db/fixtures/kasparov_games.pgn","Kasparov Games", user1 ).call
+# ImportGamesFromPGNService.new("db/fixtures/kasparov_games.pgn","Kasparov Games", user1 ).call
 ImportGamesFromPGNService.new("db/fixtures/miniatures_games.pgn","Miniatures", user1 ).call
 ImportGamesFromPGNService.new("db/fixtures/sicilian_khan_games.pgn","Sicilian Khan Black", user1 ).call
 ImportGamesFromPGNService.new("db/fixtures/my_games.pgn","My games", user1 ).call
