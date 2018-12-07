@@ -1,5 +1,5 @@
 <div class="chess-box col-sm-8" id="chessbox">
-
+  <% if @game.present? %>
   <div class="board">
     <div id="chessgame"></div>
     <div class="chess-controls">
@@ -8,11 +8,7 @@
       <div class="btn btn-primary control" id="previous-move"><img class="touches" src="<%= image_path('backward-arrow.png') %>" alt="play_game"></div>
       <div class="btn btn-primary control" id="next-move"><img class="touches" src="<%= image_path('arrow-point-to-right.png') %>" alt="play_game"></div>
       <div class="btn btn-primary control" id="last-move"><img class="touches" src="<%= image_path('fast-forward-button.png') %>" alt="play_game"></div>
-
     </div>
-  </div>
-
-  <div class="game-notation">
 
     <div class="chess-headers">
       <% if game.white_player.present? && game.black_player.present? %>
@@ -50,8 +46,13 @@
           <span class="moves moves-bold"> <%= ply.move  %></span>
       <% end %>
       <span class="moves-bold"> <%= game.result %></span>
+
     </div>
-
-
-  </div>
+  <% else %>
+    <div class="empty-collection">
+      <div><p> The <strong><%= @collection.name %></strong> collection is empty.</p></div>
+      <div><button class="btn btn-primary">Add games</button></div>
+    </div>
+  <% end %>
+</div>
 

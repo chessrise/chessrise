@@ -36,6 +36,17 @@
 //   opacity: 1;
 // }
 
+.empty-collection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 300px;
+  max-height: 95px;
+  text-align: center;
+  margin-left: 290px;
+}
+
 #white-pawn {
   color: white;
   font-size: 30px

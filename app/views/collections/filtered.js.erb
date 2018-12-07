@@ -1,5 +1,3 @@
-// console.log('yessss');
-
 function emptyGameSidebar() {
   const gameSidebar = document.getElementById("sidebar-games");
   gameSidebar.innerHTML = "";
@@ -10,6 +8,12 @@ function populateGameSideBar(gameSidebarHTML) {
   gameSidebar.insertAdjacentHTML('beforeend', gameSidebarHTML);
 };
 
+document.getElementById("chessbox").innerHTML = "";
+
+function populateChessBox(chessboxHTML) {
+  const chessbox = document.getElementById("chessbox");
+  chessbox.outerHTML = chessboxHTML;
+};
 
 function selectCard() {
   const collections = document.querySelectorAll('.collection-card');
@@ -23,6 +27,8 @@ function selectCard() {
   });
 };
 
-emptyGameSidebar();
 selectCard();
+emptyGameSidebar();
 populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
+populateChessBox('<%= j render "shared/chess_box", game: @game %>')
+window.initChessground();
