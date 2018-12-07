@@ -12,13 +12,3 @@ if(document.getElementById("chessgame")) {
 }
 
 window.initChessground = initChessground;
-
-
-
-
-
-
-
-
-
-
