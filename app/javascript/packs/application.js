@@ -14,6 +14,7 @@ if(document.getElementById("chessgame")) {
 }
 window.initChessground = initChessground;
 
+
 // js snippet needed for navbar change on scroll
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll()

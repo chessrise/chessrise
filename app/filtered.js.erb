@@ -10,6 +10,9 @@ function populateGameSideBar(gameSidebarHTML) {
   gameSidebar.insertAdjacentHTML('beforeend', gameSidebarHTML);
 };
 
+emptyGameSidebar();
+// selectCard();
+populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
 
 function selectCard() {
   const collections = document.querySelectorAll('.collection-card');
@@ -23,6 +26,4 @@ function selectCard() {
   });
 };
 
-emptyGameSidebar();
-selectCard();
-populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
+export { selectCard };
