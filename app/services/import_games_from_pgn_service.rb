@@ -1,21 +1,22 @@
 class ImportGamesFromPGNService
-  def initialize(pgn_file_path)
+  def initialize(pgn_file_path, collection_name, user)
     @pgn_file_path = pgn_file_path
+    @collection = Collection.create!(name: collection_name, user: user)
   end
 
   def call
-    p "parsing PNG from KingBase DB file"
-    kingbase_games = PGN.parse(File.read(@pgn_file_path))
+    p "parsing games from PGN"
+    games = PGN.parse(File.read(@pgn_file_path))
 
-    kingbase_games.each do |kingbase_game|
+    games.each do |game|
 
-      white_player_first_name = kingbase_game.tags["White"].split(",")[1].strip
-      white_player_last_name = kingbase_game.tags["White"].split(",")[0].strip
+      white_player_first_name = game.tags["White"].split(",")[1].strip
+      white_player_last_name = game.tags["White"].split(",")[0].strip
 
-      black_player_first_name = kingbase_game.tags["Black"].split(",")[1].strip
-      black_player_last_name = kingbase_game.tags["Black"].split(",")[0].strip
+      black_player_first_name = game.tags["Black"].split(",")[1].strip
+      black_player_last_name = game.tags["Black"].split(",")[0].strip
 
-      p "creating Players from PNG"
+      p "creating Players from PGN"
 
       if Player.exists?(last_name: white_player_last_name, first_name: white_player_first_name)
         p "white player #{white_player_first_name} #{white_player_last_name} already in DB. Linking Player ID!"
@@ -48,39 +49,42 @@ class ImportGamesFromPGNService
 
       game = Game.create!(
 
-        result: kingbase_game.result,
-        event: kingbase_game.tags["Event"],
-        site: kingbase_game.tags["Site"],
-        date: kingbase_game.tags["Date"],
-        round: kingbase_game.tags["Round"],
-        eco_code: kingbase_game.tags["ECO"],
-        initial_position: kingbase_game.fen_list.first,
-        elo_white: kingbase_game.tags["WhiteElo"],
-        elo_black: kingbase_game.tags["BlackElo"],
+        result: game.result,
+        event: game.tags["Event"],
+        site: game.tags["Site"],
+        date: game.tags["Date"],
+        round: game.tags["Round"],
+        eco_code: game.tags["ECO"],
+        initial_position: game.fen_list.first,
+        elo_white: game.tags["WhiteElo"],
+        elo_black: game.tags["BlackElo"],
         white_player: white_player,
         black_player: black_player,
-        ply_count_total: kingbase_game.positions.last.halfmove
+        ply_count_total: game.positions.last.halfmove
 
       )
 
       p "created game : #{game.white_player.last_name} vs #{game.black_player.last_name} - Result: #{game.result} "
 
       p "creating Plies from Game"
-      kingbase_game.moves.each_with_index do |kingbase_ply, index|
+      game.moves.each_with_index do |kingbase_ply, index|
         Ply.create!(
                     game: game,
                     ply_count: index + 1,
                     move: kingbase_ply.notation,
                     status: "main",
-                    fen: kingbase_game.fen_list[index]
+                    fen: game.fen_list[index]
                   )
       end
       p "number of Plies in Game: #{Ply.last.ply_count}"
       p "______________________________________________"
 
+
+    p "creating tags"
+      Tag.create!(game: game, collection: @collection)
     end
 
   end
-
-  private
 end
+
+

@@ -1,5 +1,5 @@
 #sidebar-games {
-    height: 100vh;
+    height: calc(100vh - 70px);
     background: White;
     transition: all 0.3s;
     padding: 0;
@@ -7,4 +7,5 @@
     border-right: solid 1px lightgrey;
     overflow-y: scroll;
 }
+
 
