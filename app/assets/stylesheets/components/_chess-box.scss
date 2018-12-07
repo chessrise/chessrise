@@ -6,19 +6,17 @@
 }
 
 .players {
-  display: inline-flex;
-  justify-content: space-between;
-  font-size: 18px;
-  background: #1E5772;
-  color: LightGray;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bolder;
-  margin-bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
 }
 
 .player {
-  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 50%;
 }
 
 .current-move {
@@ -26,6 +24,9 @@
   font-weight: bold;
 }
 
+.control {
+  margin: 1px;
+}
 // i {
 //   color: LightGray;
 //   opacity: 0.6;
@@ -36,7 +37,7 @@
 // }
 
 #white-pawn {
-  color: rbg(3, 3, 3);
+  color: white;
   font-size: 30px
 }
 
@@ -45,36 +46,56 @@
   font-size: 30px;
 }
 .chess-moves {
-  padding: 5px;
+  padding: 10px;
 }
 
 #chessgame {
-  width:500px;
-  height:500px;
+  width:450px;
+  height:450px;
+  margin-left: 25px;
+  border: 1px solid lightgrey;
 }
 
 .chess-headers {
+  background: #F7F7F7;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 1px;
+  min-height: 70px;
 }
 
 .chess-controls{
   display:flex;
   justify-content: center;
+  margin-top: 40px;
 }
+
 .chess-board {
   background-color: white;
 }
 .game-notation {
   width: 100%;
-  box-shadow: 1px 1px #D6E0E5;
+  border: 1px solid lightgrey;
+  margin-left: 25px;
+  margin-right: 20px;
+  max-height: 550px;
+  overflow-y: scroll;
+
 }
 .chess-description {
   font-weight: lighter;
-  font-size: smaller;
+  font-size: 12px;
 }
 .chess-box {
   display: flex;
   background-color : white;
   padding-top: 100px;
+}
+
+.moves-bold {
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .moves:hover {
