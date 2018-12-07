@@ -45,6 +45,7 @@
   def filtered
     @collection = Collection.find(params[:id])
     @games = @collection.games
+    @game = @games.first
     respond_to do |format|
       format.html { redirect_to collections_path }
       format.js
