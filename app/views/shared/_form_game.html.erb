@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for @game do |f| %>
+  <%= simple_form_for@game do |f| %>
     <%= f.input :name %>
     <%= f.input :event %>
     <%= f.input :site %>
@@ -12,3 +12,12 @@
 </div>
 
 
+<div class="box d-flex">
+  <div id="chessgame-input">
+  </div>
+  <%= render "shared/chess_box_controls" %>
+
+  <div class="moves-input" style="background:blue; height: 300px; ; width: 200px;">
+  </div>
+
+</div>
