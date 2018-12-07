@@ -4,18 +4,16 @@
   font-size: 14px;
   font-weight: lighter;
 }
-
 .collection-card:hover {
   font-weight: bold;
   font-style: italic;
   background-color: #1E5772;
-  color: orange;
-}
-
-.collection-card:hover a {
-  font-weight: bold;
   color: white;
-  opacity: 0.8;
+}
+.collection-card:active {
+  font-weight: bold;
+  background-color: #1E5772;
+  color: white;
 }
 
 .collection-card > a {
@@ -24,8 +22,24 @@
   color: black;
 }
 
+.collection-card:hover a {
+  font-weight: bold;
+  color: white;
+  opacity: 0.8;
+}
+.collection-card:active a {
+  font-weight: bold;
+  background-color: #1E5772;
+  color: white;
+}
 
+a:hover {
+  text-decoration: none;
+}
 
-
-
-
+.collection-card-persist {
+  font-weight: bold;
+  font-style: italic;
+  background-color: #1E5772;
+  color: white;
+}
