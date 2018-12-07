@@ -1,54 +1,52 @@
 <div class="chess-box col-sm-8" id="chessbox">
   <% if @game.present? %>
-    <div class="board">
-      <div id="chessgame"></div>
-      <div class="chess-controls">
-        <div class="btn btn-primary" id="board-toggle"><img class="touches" src="<%= image_path('rotating.png') %>" alt="play_game"></div>
-        <div class="btn btn-primary" id="first-move"><img class="touches" src="<%= image_path('first_move.png') %>" alt="play_game"></div>
-        <div class="btn btn-primary" id="previous-move"><img class="touches" src="<%= image_path('backward-arrow.png') %>" alt="play_game"></div>
-        <div class="btn btn-primary" id="next-move"><img class="touches" src="<%= image_path('arrow-point-to-right.png') %>" alt="play_game"></div>
-        <div class="btn btn-primary" id="last-move"><img class="touches" src="<%= image_path('fast-forward-button.png') %>" alt="play_game"></div>
-
-      </div>
+  <div class="board">
+    <div id="chessgame"></div>
+    <div class="chess-controls">
+      <div class="btn btn-primary control" id="board-toggle"><img class="touches" src="<%= image_path('rotating.png') %>" alt="play_game"></div>
+      <div class="btn btn-primary control" id="first-move"><img class="touches" src="<%= image_path('first_move.png') %>" alt="play_game"></div>
+      <div class="btn btn-primary control" id="previous-move"><img class="touches" src="<%= image_path('backward-arrow.png') %>" alt="play_game"></div>
+      <div class="btn btn-primary control" id="next-move"><img class="touches" src="<%= image_path('arrow-point-to-right.png') %>" alt="play_game"></div>
+      <div class="btn btn-primary control" id="last-move"><img class="touches" src="<%= image_path('fast-forward-button.png') %>" alt="play_game"></div>
     </div>
 
-    <div class="game-notation">
-
-      <div class="chess-headers">
-        <% if game.white_player.present? && game.black_player.present? %>
+    <div class="chess-headers">
+      <% if game.white_player.present? && game.black_player.present? %>
+        <div class="players">
           <div class="player">
             <p>
-              <i class="fas fa-chess-pawn" id="white-pawn"></i>
-              <span><%= game.white_player.fullname %></span>
+<!--               <i class="fas fa-chess-pawn" id="white-pawn"></i> -->
+              <span> <strong><%= game.white_player.fullname %></strong> </span>
               <%= link_to edit_player_path(game.white_player) do %>
-                <i class="fas fa-pencil-alt"></i>
               <% end %>
             </p>
           </div>
+          <div> vs.</div>
           <div class="player">
             <p>
-              <i class="fas fa-chess-pawn" id="black-pawn"></i>
-              <span><%= game.black_player.fullname %></span>
+<!--               <i class="fas fa-chess-pawn" id="black-pawn"></i> -->
+              <span> <strong><%= game.black_player.fullname %></strong>  </span>
               <%= link_to edit_player_path(game.black_player) do %>
-                <i class="fas fa-pencil-alt"></i>
               <% end %>
             </p>
           </div>
-        <% else %>
-          <span> <%= game.name %></span>
-        <% end %>
+        </div>
         <div class="chess-description">
-          <p> <%= game.event %> | <%= game.site %> | <%= game.date %>  <i class="fas fa-pencil-alt"></i>
+          <p> <%= game.event %> | <%= game.site %> | <%= game.date %> | <%= game.result %>
           </p>
         </div>
-      </div>
+      <% else %>
+        <span> <%= game.name %></span>
+      <% end %>
+    </div>
 
-      <div class="chess-moves">
-        <% game.main_sorted_plies.each do |ply| %>
-            <span> <%= ply.display_move_number %></span>
-            <span class="moves"> <%= ply.move  %></span>
-        <% end %>
-      </div>
+    <div class="chess-moves">
+      <% game.main_sorted_plies.each do |ply| %>
+          <span class="moves-bold"> <%= ply.display_move_number %></span>
+          <span class="moves moves-bold"> <%= ply.move  %></span>
+      <% end %>
+      <span class="moves-bold"> <%= game.result %></span>
+
     </div>
   <% else %>
     <div class="empty-collection">
