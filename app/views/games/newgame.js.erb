@@ -1,0 +1,12 @@
+console.log("yess");
+document.getElementById("chessbox").innerHTML = "";
+
+function populateChessBox(chessboxHTML) {
+  const chessbox = document.getElementById("chessbox");
+  chessbox.outerHTML = chessboxHTML;
+};
+
+
+populateChessBox('<%= j render "shared/form_game"%>')
+
+window.initChessgroundInput();

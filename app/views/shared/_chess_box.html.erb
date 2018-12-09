@@ -42,7 +42,9 @@
   <% else %>
     <div class="empty-collection">
       <div><p> The <strong><%= @collection.name %></strong> collection is empty.</p></div>
-      <div><button class="btn btn-primary">Add games</button></div>
+      <%= link_to newgame_path, remote: true, class: "btn btn-primary" do  %>
+        Add games
+      <% end %>
     </div>
   <% end %>
 </div>

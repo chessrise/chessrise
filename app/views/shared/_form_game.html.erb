@@ -1,23 +1,20 @@
-<div class="container">
-  <%= simple_form_for@game do |f| %>
-    <%= f.input :name %>
-    <%= f.input :event %>
-    <%= f.input :site %>
-    <%= f.input :date %>
-    <%= f.input :round %>
-    <%= f.input :result %>
-    <%= f.input :elo_white %>
-    <%= f.input :elo_black %>
-  <% end %>
-</div>
+<div class="chess-box col-sm-8" id="chessbox">
 
-
-<div class="box d-flex">
-  <div id="chessgame-input">
-  </div>
-  <%= render "shared/chess_box_controls" %>
-
-  <div class="moves-input" style="background:blue; height: 300px; ; width: 200px;">
+  <div class="board">
+    <div id="chessgame-input"></div>
+    <%= render "shared/chess_box_controls" %>
   </div>
 
+  <div class="game-notation">
+
+    <div class="chess-headers">
+    </div>
+
+    <div class="moves-input">
+    </div>
+
+  </div>
+
+
 </div>
+

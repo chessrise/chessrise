@@ -38,6 +38,14 @@ class GamesController < ApplicationController
     end
   end
 
+  def newgame
+    @collection = Collection.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to collections_path }
+      format.js
+    end
+  end
+
   private
 
   def calculate_eco
@@ -48,3 +56,4 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 end
+
