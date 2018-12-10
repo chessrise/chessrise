@@ -2,10 +2,12 @@
 
   <div class="sidebar-header">
     <% if @collection == "All games" %>
+      <i class="far fa-trash-alt" style="color:#1E5772"></i>
       <p> <%= @collection %> </p>
     <% else %>
       <p><%= @collection.name %></p>
     <% end %>
+
   </div>
 
   <div class="list-of-games">
