@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/filtered/:id', to: 'collections#filtered', as: :filtered
   get '/chessbox/:id', to: 'games#chessbox', as: :chessbox
+  get '/:id/newgame', to: 'games#newgame', as: :newgame
 
   resources :games do
     collection do

@@ -1,0 +1,13 @@
+function emptyGameSidebar() {
+  const gameSidebar = document.getElementById("sidebar-games");
+  gameSidebar.innerHTML = "";
+};
+
+function populateGameSideBar(gameSidebarHTML) {
+  const gameSidebar = document.getElementById("sidebar-games");
+  gameSidebar.insertAdjacentHTML('beforeend', gameSidebarHTML);
+};
+
+emptyGameSidebar();
+populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
+

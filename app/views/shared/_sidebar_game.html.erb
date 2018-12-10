@@ -6,6 +6,9 @@
     <% else %>
       <p><%= @collection.name %></p>
     <% end %>
+    <%= link_to newgame_path(@collection), remote: true do  %>
+      <i class="far fa-plus-square"></i>
+    <% end %>
   </div>
 
   <div class="list-of-games">

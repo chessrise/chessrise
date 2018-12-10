@@ -18,9 +18,37 @@ const toColor = (chess) => {
   return (chess.turn() === 'w') ? 'white' : 'black';
 };
 
+const displayMoveNumber = (ply_count) => {
+  let moveNumber = ""
+  if (ply_count === 1) {
+    moveNumber = `<span class="moves-bold">${1.}</span>`;
+  } else if (ply_count % 2 !==0) {
+    moveNumber = `<span class="moves-bold"> ${(ply_count+1)/2}.</span>`;
+  }
+  else {
+    moveNumber = "";
+  }
+  return moveNumber;
+};
+
+const displayChessMoves = (chess) => {
+  const displayedMoves = [];
+  chess.history().forEach( (move, index) => {
+    let moveNumber = displayMoveNumber(index+1);
+    let movePly = `<span class="moves moves-bold"> ${move} </span>`;
+    displayedMoves.push(`${moveNumber} ${movePly}`);
+  });
+  return displayedMoves.join("");
+};
+
 const playOtherSide = (cg, chess) => {
-  return (orig, dest) => {
+  return (orig, dest, metadata) => {
     chess.move({from: orig, to: dest});
+    i += 1;
+    console.log(i);
+    const movesInput =  document.querySelector(".moves-input");
+    movesInput.innerHTML = "";
+    movesInput.innerHTML = displayChessMoves(chess);
     cg.set({
       turnColor: toColor(chess),
       movable: {
@@ -31,8 +59,8 @@ const playOtherSide = (cg, chess) => {
   };
 }
 
-const initialPosition = (chess) => {
-  const cg = Chessground(document.getElementById("chessgame"),
+const initialPosition = (chess, id) => {
+  const cg = Chessground(document.getElementById(id),
    {movable: {
       color: 'white',
       free: false,
@@ -49,27 +77,27 @@ const initialPosition = (chess) => {
 };
 
 const playNext = (chess, cg, moves) => {
-    if (i < moves.length) {
-      chess.move(moves[i].innerText);
-      moves[i].classList.add("current-move")
-      if (i !== 0) {
-        moves[i-1].classList.remove("current-move")
-      }
-      cg.set( { fen: chess.fen() } );
-      i += 1;
-      console.log(i);
-    };
+  if (i < moves.length) {
+    chess.move(moves[i].innerText.replace(" ",""));
+    moves[i].classList.add("current-move")
+    if (i !== 0) {
+      moves[i-1].classList.remove("current-move")
+    }
+    cg.set( { fen: chess.fen() } );
+    i += 1;
+  };
 };
 
 const playPrevious = (chess, cg, moves) => {
-    if (i > 0) {
-      chess.undo();
+  if (i > 0) {
+    chess.undo();
+    cg.set( { fen: chess.fen() } );
+    if (i >= 3) {
       moves[i-1].classList.remove("current-move")
       moves[i-2].classList.add("current-move")
-      cg.set( { fen: chess.fen() } );
-      i -= 1;
-      console.log(i)
     }
+    i -= 1;
+  }
 };
 
 const resetBoard = (chess, cg, moves) => {
@@ -85,38 +113,56 @@ const removeCurrentMoves = (moves) => {
   })
 };
 
-let i = 0;
-function initChessground() {
-  i = 0;
-  const chess = new Chess();
-  const cg = initialPosition(chess);
-  const moves = document.querySelectorAll(".moves");
+const chessBoxControls = (chess, cg) => {
+  // const moves = document.querySelectorAll(".moves");
   document.getElementById("next-move").addEventListener("click", () => {
-    playNext(chess, cg, moves)
+    const tests = document.querySelectorAll(".moves");
+    playNext(chess, cg, tests)
   });
   document.getElementById("previous-move").addEventListener("click", () => {
-    playPrevious(chess, cg, moves);
+    const tests = document.querySelectorAll(".moves");
+    playPrevious(chess, cg, tests);
   });
   document.getElementById("board-toggle").addEventListener("click", () => {
     toggleBoard(cg);
   });
   document.getElementById("first-move").addEventListener("click", () => {
-    resetBoard(chess,cg, moves);
+    const tests = document.querySelectorAll(".moves");
+    resetBoard(chess,cg, tests);
   });
   document.getElementById("last-move").addEventListener("click", () => {
-    for (i; i < moves.length; i++) {
-      console.log(i);
-      console.log(moves[i].innerText);
-      chess.move(moves[i].innerText);
+    const tests = document.querySelectorAll(".moves");
+    for (i; i < tests.length; i++) {
+      chess.move(tests[i].innerText.replace(" ",""));
     };
-    removeCurrentMoves(moves);
+    removeCurrentMoves(tests);
     cg.set( {fen: chess.fen()});
-    moves[i-1].classList.add("current-move");
+    tests[i-1].classList.add("current-move");
   });
+};
+
+let i = 0;
+const initChessground = () =>{
+  i = 0;
+  if (document.getElementById("chessgame")) {
+    const chess = new Chess();
+    const cg = initialPosition(chess, "chessgame");
+    chessBoxControls(chess, cg);
+  }
 }
 
-export { initChessground };
 
+const initChessgroundInput = () => {
+  i = 0
+  if (document.getElementById("chessgame-input")) {
+    const chess = new Chess();
+    const cg = initialPosition(chess, "chessgame-input");
+    chessBoxControls(chess, cg);
+  }
+};
+
+export { initChessground };
+export { initChessgroundInput };
 
 
 
