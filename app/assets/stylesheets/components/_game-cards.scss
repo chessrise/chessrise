@@ -4,7 +4,7 @@
   min-height: 60px;
   color: black;
   position: relative;
-  border-top: solid 1px lightgrey;
+  border-top: solid 1px LightGray;
   display: flex;
   align-items: center;
   // box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, 0.2);
@@ -18,9 +18,13 @@
   // opacity: 0.7;
   }
 }
+.game-card-persist {
+  background-color: #3183A8;
+  font-weight: bold;
+}
 
 .list-of-games :last-child .game-card {
-  border-bottom: solid 1px lightgrey;
+  border-bottom: solid 1px LightGray;
 }
 
 // .game-card-header {

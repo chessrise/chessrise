@@ -5,7 +5,21 @@ function populateChessBox(chessboxHTML) {
   chessbox.outerHTML = chessboxHTML;
 };
 
+
+function selectGame() {
+  const games = document.querySelectorAll('.game-card');
+  games.forEach((element) => {
+      element.addEventListener('click', (event) => {
+        element.classList.add('game-card-persist');
+
+        games.forEach((element) => {
+        element.classList.remove('game-card-persist');
+      });
+      element.classList.add('game-card-persist');
+    })
+  });
+};
+
 populateChessBox('<%= j render "shared/chess_box", game: @game %>')
-
 window.initChessground();
-
+selectGame();
