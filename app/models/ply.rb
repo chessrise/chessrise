@@ -15,9 +15,4 @@ class Ply < ApplicationRecord
     end
   end
 
-  def searchable_fen
-    content_to_delete = /(\s(w|b)\s)\K.+/.match(fen)[0]
-    fen.gsub(content_to_delete, "")
-  end
-
 end

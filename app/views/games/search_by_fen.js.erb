@@ -5,26 +5,10 @@ function emptySearchResults() {
   searchResults.innerHTML = "";
 };
 
-function populateSearchResults(search_resultsHTML) {
+function populateSearchResults(searchResultsHTML) {
   const searchResults = document.getElementById("search-results");
   searchResults.insertAdjacentHTML('beforeend', searchResultsHTML);
 };
 
 emptySearchResults();
 populateSearchResults('<%= j render "shared/search_results", games: @games %>');
-
-// // console.log('yessss');
-
-// function emptyGameSidebar() {
-//   const gameSidebar = document.getElementById("sidebar-games");
-//   gameSidebar.innerHTML = "";
-// };
-
-// function populateGameSideBar(gameSidebarHTML) {
-//   const gameSidebar = document.getElementById("sidebar-games");
-//   gameSidebar.insertAdjacentHTML('beforeend', gameSidebarHTML);
-// };
-
-// emptyGameSidebar();
-// // selectCard();
-// populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
