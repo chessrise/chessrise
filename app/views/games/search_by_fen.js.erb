@@ -1,0 +1,14 @@
+console.log('code has been found. Good luck')
+
+function emptySearchResults() {
+  const searchResults = document.getElementById("search-results");
+  searchResults.innerHTML = "";
+};
+
+function populateSearchResults(searchResultsHTML) {
+  const searchResults = document.getElementById("search-results");
+  searchResults.insertAdjacentHTML('beforeend', searchResultsHTML);
+};
+
+emptySearchResults();
+populateSearchResults('<%= j render "shared/search_results", games: @games %>');

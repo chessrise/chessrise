@@ -14,4 +14,5 @@ class Ply < ApplicationRecord
       return "#{(ply_count + 1) / 2}."
     end
   end
+
 end
