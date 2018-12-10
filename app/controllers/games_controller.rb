@@ -38,6 +38,11 @@ class GamesController < ApplicationController
     end
   end
 
+  def search_by_fen
+    search_fen = Ply.find(params[:id]).searchable_fen
+    @games = Ply.where("fen ILIKE ?", "#{search_fen}%").includes(:game).map(&:game).uniq
+  end
+
   private
 
   def calculate_eco

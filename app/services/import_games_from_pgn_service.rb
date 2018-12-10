@@ -71,8 +71,8 @@ class ImportGamesFromPGNService
           pgn_game.moves.each_with_index do |kingbase_ply, index|
             fen = pgn_game.fen_list[index]
 
-            content_to_delete = /(\s(w|b)\s)\K.+/.match(fen)[0]
-            searchable_fen    = fen.gsub(content_to_delete, "")
+            # content_to_delete = /(\s(w|b)\s)\K.+/.match(fen)[0]
+            # searchable_fen    = fen.gsub(content_to_delete, "")
 
             Ply.create!(
                         game: game,
@@ -80,13 +80,10 @@ class ImportGamesFromPGNService
                         move: kingbase_ply.notation,
                         status: "main",
                         fen: fen,
-                        searchable_fen: searchable_fen
+                        # searchable_fen: searchable_fen
                       )
             p "Ply: #{kingbase_ply.notation}"
             p "FEN: #{pgn_game.fen_list[index]}"
-            # Ply.searchable_fen = pgn_game.fen_list[index].make_fen_searchable
-
-            # p "searchable FEN: #{pgn_game.fen_list[index].make_fen_searchable}"
             p "searchable FEN: #{searchable_fen}"
 
           end

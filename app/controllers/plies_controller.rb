@@ -30,5 +30,4 @@ class PliesController < ApplicationController
     @ply.destroy
     redirect_to game_path(@game)
   end
-
 end
