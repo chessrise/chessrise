@@ -20,6 +20,12 @@ if(document.getElementById("chessgame-input")) {
 }
 window.initChessgroundInput = initChessgroundInput;
 
+import {getMoves} from "../components/save_game";
+getMoves();
+
+window.getMoves = getMoves;
+
+
 
 // // js snippet needed for navbar change on scroll
 // import { initUpdateNavbarOnScroll } from '../components/navbar';

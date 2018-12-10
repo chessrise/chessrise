@@ -5,16 +5,34 @@
     <%= render "shared/chess_box_controls" %>
   </div>
 
-  <div class="game-notation">
+  <div class="moves-text">
 
-    <div class="chess-headers">
+    <div class="game-notation-input">
+
+      <div class="chess-headers">
+        <input type="text" name="white_player_first_name" id="white_player_first_name" placeholder="White First Name">
+        <input type="text" name="white_player_last_name" id="white_player_last_name" placeholder="White Last Name">
+        <input type="text" name="black_player_first_name" id="black_player_first_name" placeholder="Black First Name">
+        <input type="text" name="black_player_last_name" id="black_player_last_name" placeholder="Black Last Name">
+
+        <ul class="list-inline">
+          <li class="list-inline-item"><input type="radio" name="result" id="result" value="1-0"> White</li>
+          <li class="list-inline-item"><input type="radio" name="result" id="result" value="1/2-1/2"> Draw</li>
+          <li class="list-inline-item"><input type="radio" name="result" id="result" value="0-1"> Black</li>
+        </ul>
+      </div>
+
+      <div class="moves-input" id="moves-create"></div>
+
     </div>
 
-    <div class="moves-input">
+    <div class="create-button">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token, id: "token" %>
+      <%= hidden_field_tag :collection, @collection.id, id: "collection-id" %>
+      <button data-remote="true" class= "btn btn-primary" id= "save-game-button"> Save Game</button>
     </div>
 
   </div>
 
 
 </div>
-

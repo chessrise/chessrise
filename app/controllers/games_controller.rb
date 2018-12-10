@@ -19,6 +19,66 @@ class GamesController < ApplicationController
   end
 
   def create
+    @collection = Collection.find(params[:collection_id])
+    moves = params["movesArray"]
+    white_player_first_name = params["white_player_first_name"]
+    white_player_last_name = params["white_player_last_name"]
+    black_player_first_name = params["black_player_first_name"]
+    black_player_last_name = params["black_player_last_name"]
+    result = params["result"]
+
+
+    if Player.exists?(last_name: white_player_last_name, first_name: white_player_first_name)
+      p "white player #{white_player_first_name} #{white_player_last_name} already in DB. Linking Player ID!"
+      white_player = Player.find_by(
+                                    first_name: white_player_first_name,
+                                    last_name: white_player_last_name
+                                  )
+    else
+      p "white player #{white_player_first_name} #{white_player_last_name} not in DB. Creating Player!"
+      white_player = Player.create!(
+                                  first_name: white_player_first_name,
+                                  last_name: white_player_last_name
+                                )
+    end
+    if Player.exists?(last_name: black_player_last_name, first_name: black_player_first_name)
+      p "black player #{black_player_first_name} #{black_player_last_name} already in DB. Linking Player ID!"
+      black_player = Player.find_by(
+                                    first_name: black_player_first_name,
+                                    last_name: black_player_last_name
+                                  )
+    else
+      p "black player #{black_player_first_name} #{black_player_last_name} not in DB. Creating Player!"
+      black_player = Player.create!(
+                                first_name: black_player_first_name,
+                                last_name: black_player_last_name
+                              )
+    end
+    @game = Game.create!(white_player: white_player,
+                          black_player: black_player,
+                          result: result)
+
+    if moves.present?
+      moves.each_with_index do |move, index|
+        Ply.create!(
+                    game: @game,
+                    ply_count: index + 1,
+                    move: move,
+                    status: "main",
+                    # fen: pgn_game.fen_list[index]
+                  )
+      end
+    end
+    @game.save
+    Tag.create!(game: @game, collection: @collection)
+
+    @games = @collection.games
+
+    respond_to do |format|
+      format.html { redirect_to collections_path }
+      format.js
+    end
+
   end
 
   def edit
