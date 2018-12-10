@@ -69,14 +69,28 @@ class ImportGamesFromPGNService
 
           p "creating Plies from Game"
           pgn_game.moves.each_with_index do |kingbase_ply, index|
+            fen = pgn_game.fen_list[index]
+
+            content_to_delete = /(\s(w|b)\s)\K.+/.match(fen)[0]
+            searchable_fen    = fen.gsub(content_to_delete, "")
+
             Ply.create!(
                         game: game,
                         ply_count: index + 1,
                         move: kingbase_ply.notation,
                         status: "main",
-                        fen: pgn_game.fen_list[index]
+                        fen: fen,
+                        searchable_fen: searchable_fen
                       )
+            p "Ply: #{kingbase_ply.notation}"
+            p "FEN: #{pgn_game.fen_list[index]}"
+            # Ply.searchable_fen = pgn_game.fen_list[index].make_fen_searchable
+
+            # p "searchable FEN: #{pgn_game.fen_list[index].make_fen_searchable}"
+            p "searchable FEN: #{searchable_fen}"
+
           end
+
           p "number of Plies in Game: #{Ply.last.ply_count}"
           p "______________________________________________"
 
