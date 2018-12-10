@@ -41,6 +41,10 @@ class GamesController < ApplicationController
   def search_by_fen
     search_fen = Ply.find(params[:id]).searchable_fen
     @games = Ply.where("fen ILIKE ?", "#{search_fen}%").includes(:game).map(&:game).uniq
+    respond_to do |format|
+      format.html { redirect_to collections_path }
+      format.js
+    end
   end
 
   private
