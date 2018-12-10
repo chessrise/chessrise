@@ -43,6 +43,7 @@
   end
 
   def filtered
+
     @collection = Collection.find(params[:id])
     @games = @collection.games
     @game = @games.first
