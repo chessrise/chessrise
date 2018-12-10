@@ -20,21 +20,14 @@
 }
 
 .current-move {
-  background: lightgrey;
+  // background: #FF4944; #Corail
+  background: #FFB600;
   font-weight: bold;
 }
 
 .control {
   margin: 1px;
 }
-// i {
-//   color: LightGray;
-//   opacity: 0.6;
-// }
-// i:hover {
-//   color: LightGray;
-//   opacity: 1;
-// }
 
 .empty-collection {
   display: flex;
@@ -101,6 +94,7 @@
   display: flex;
   background-color : white;
   padding-top: 100px;
+  // height: calc(100vh-70px);
 }
 
 .moves-bold {
@@ -113,3 +107,4 @@
   font-size: bold;
   cursor: pointer;
 }
+

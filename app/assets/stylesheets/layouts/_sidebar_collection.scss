@@ -3,6 +3,7 @@
   background-image: linear-gradient(to bottom right, #EDEDEE , white);
   transition: all 0.3s;
   padding: 0;
+  height: calc(100vh - 70px);
 }
 
 .sidebar-header {
@@ -18,6 +19,7 @@
   bottom: 10px;
   font-size: 30px;
 }
+
 // #sidebar ul.components {
 //     padding: 20px 0;
 //     border-bottom: 1px solid #47748b;
