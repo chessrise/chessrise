@@ -1,3 +1,4 @@
+
 class GamesController < ApplicationController
   before_action :calculate_eco, only: [:update, :create]
   before_action :set_game, only: [:show, :edit, :udpate, :destroy]
@@ -136,8 +137,8 @@ class GamesController < ApplicationController
 
   def savegame
     @game = Game.find(params[:game_id])
-    @collection = Collection.find(params[:game_id])
-    @game.collections << @collections
+    @collection = Collection.find(params[:collection_id])
+    @game.collections << @collection
     @game.save
   end
 

@@ -30,59 +30,8 @@ function selectCard() {
   });
 };
 
-// Games are the list of dataset sender.
-function dragGame () {
-  console.log("drag");
-  const games = document.querySelectorAll('.game-card');
-  games.forEach((g) => {
-    g.addEventListener("dragstart", function( event ) {
-        // store a ref. on the dragged elem
-        event.preventDefault();
-        dragged = event.target;
-        // make it half transparent
-        event.target.style.opacity = 0.2;
-        event.dataTransfer.setData("text", event.target.id);
-        console.log(event.target);
-    }, false);
-    g.addEventListener("dragend", function( event ) {
-        // reset the transparency
-        event.target.style.opacity = "";
-    }, false);
-  });
-};
-
-// Collections are the list of dataset receiver.
-function dropGame() {
-  const collections = document.querySelectorAll('.collection-card');
-  collections.forEach( (col)=> {
-    col.addEventListener("dragenter", function( event ) {
-      event.preventDefault();
-      }, false);
-    col.addEventListener("dragover", function( event ) {
-      event.preventDefault();
-      }, false);
-    col.addEventListener("dragleave", function( event ) {
-       event.preventDefault();
-      }, false);
-    col.addEventListener("drop", function( event ) {
-      console.log("hihihi");
-      event.preventDefault();
-      const collection = document.getElementById('chosen_collection');
-      collection.value = col.dataset.uid;
-      console.log(collection.value);
-      const game = document.getElementById('chosen_game');
-      console.log(game);
-      game.value = event.dataTransfer.getData("text");
-      console.log(game.value);
-      }, false);
-    });
-};
-
-
 selectCard();
 emptyGameSidebar();
 populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
 populateChessBox('<%= j render "shared/chess_box", game: @game %>')
 window.initChessground();
-dragGame();
-dropGame();
