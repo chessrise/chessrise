@@ -140,11 +140,15 @@
 
 .moves-bold {
   font-size: 14px;
-  font-weight: bold;
+  // font-weight: bold;
+}
+
+.moves {
+  color: #1E5772;
 }
 
 .moves:hover {
-  background-color: grey;
+  background-color: #FFB600;
   font-size: bold;
   cursor: pointer;
 }
@@ -171,7 +175,3 @@
   justify-content: center;
   margin-top: 40px;
 }
-
-// .chessbox-search-container {
-//   padding-top: 100px;
-// }
