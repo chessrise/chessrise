@@ -43,10 +43,10 @@
     <%# end %>
   </div>
 
-  <%= form_tag tags_path, method: :post, remote: true do  %>
-    <input name="collection_id" id="chosen_collection">
-    <input name="game_id" id="chosen_game">
-    <input type="submit">
+  <%= form_tag tags_path, id: "autoform", method: :post, remote: true do  %>
+    <%= text_field_tag(:chosen_collection) %>
+    <%= text_field_tag(:chosen_game) %>
+    <%= submit_tag("valider",id: "submit-button") %>
   <% end %>
 
 </div>

@@ -1,11 +1,9 @@
 // Games are the list of dataset sender.
 function dragGame() {
-  console.log("drag");
   const games = document.querySelectorAll('.game-card');
   games.forEach((g) => {
     g.addEventListener("dragstart", function( event ) {
         event.dataTransfer.setData("text", g.dataset.uid);
-        console.log(event.dataTransfer.getData("text"));
     }, false);
     g.addEventListener("dragend", function( event ) {
     }, false);
@@ -31,6 +29,7 @@ function dropGame() {
       collection.value = col.dataset.uid;
       const game = document.getElementById('chosen_game');
       game.value = event.dataTransfer.getData("text");
+      document.getElementById("submit-button").click();
       }, false);
     });
 };

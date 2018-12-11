@@ -136,8 +136,8 @@ class GamesController < ApplicationController
   end
 
   def savegame
-    @game = Game.find(params[:game_id])
-    @collection = Collection.find(params[:collection_id])
+    @game = Game.find(params[:chosen_game])
+    @collection = Collection.find(params[:chosen_collection])
     @game.collections << @collection
     @game.save
   end
