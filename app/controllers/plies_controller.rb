@@ -8,7 +8,6 @@ class PliesController < ApplicationController
 
   def new
     @ply = Ply.new
-
     @game = Game.find(@ply.game_id)
     raise
   end

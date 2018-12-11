@@ -71,8 +71,8 @@
 }
 
 #chessgame-find {
-  width:375px;
-  height:375px;
+  width:450px;
+  height:450px;
   border: 1px solid lightgrey;
 }
 
@@ -135,16 +135,10 @@
   // height: calc(100vh-70px);
 }
 
-#chessbox-search {
-  background: red;
-}
-
-#chessbox-notation {
-  background: green;
-}
-
-#search-results {
-  background: blue;
+.moves-input{
+  background: white;
+  min-height: 200px;
+  padding: 10px;
 }
 
 .moves-bold {
@@ -158,3 +152,34 @@
   cursor: pointer;
 }
 
+.wrapper-white {
+  background: white;
+}
+
+#search-results {
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+}
+
+.search-notation {
+  border: 1px solid lightgrey;
+}
+
+.search-headers {
+  background: #F7F7F7;
+  min-height: 60px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+// .chessbox-search-container {
+//   padding-top: 100px;
+// }

@@ -99,28 +99,41 @@ class GamesController < ApplicationController
     end
   end
 
+  def chessbox_search
+    @game = Game.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to collections_path }
+      format.js
+    end
+  end
+
   def search
     @collections = Collection.all
     @collection = Collection.find(1)
     @search_fen = params[:search_fen] || "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
-    @moves = params[:moves]
+    if params[:moves].present?
+      @moves_string = params[:moves]
+      @moves = @moves_string.split(",")
+    end
     if @search_fen.present?
-      @games = Ply.where("fen ILIKE ?", "#{@search_fen}%").includes(:game).map(&:game).uniq
+      @games = Ply.where("fen ILIKE ?", "#{@search_fen}%").includes(:game).map do |ply|
+        [ply.game, ply.ply_count]
+      end
     else
       @games = Game.all
     end
   end
 
   def searchable_fen(fen)
-    content_to_delete = /(\s(w|b)\s)\K.+/.match(fen)[0]
-    fen.gsub(content_to_delete, "")
+    if /(\s(w|b)\s)\K.+/.match(fen)
+      fen.gsub(/(\s(w|b)\s)\K.+/.match(fen)[0], "")
+    end
   end
 
   def search_by_fen
-    # search_fen = Ply.find(params[:id]).searchable_fen
-    # binding.pry
     @search_fen = searchable_fen(params["fen"])
-    @path = search_url(search_fen: @search_fen)
+    @moves = params["moves"]
+    @path = search_url(search_fen: @search_fen, moves: @moves)
     respond_to do |format|
       format.html { redirect_to collections_path }
       format.js
