@@ -9,6 +9,8 @@ if(document.getElementById("banner")) {
 // chessground js library needed for displaying games
 import { initChessground } from "../components/chessgame";
 import { initChessgroundInput } from "../components/chessgame";
+// import { initChessgroundFind } from "../components/chessgame";
+import { initChessgroundFindFen } from "../components/chessgame";
 
 if(document.getElementById("chessgame")) {
   initChessground();
@@ -20,11 +22,21 @@ if(document.getElementById("chessgame-input")) {
 }
 window.initChessgroundInput = initChessgroundInput;
 
+// if(document.getElementById("chessgame-find")) {
+//   initChessgroundFind();
+// }
+// window.initChessgroundFind = initChessgroundFind;
+
+if(document.getElementById("chessgame-find")) {
+  const fen = document.getElementById("fen");
+  initChessgroundFindFen(fen.dataset.fen);
+}
+window.initChessgroundFindFen = initChessgroundFindFen;
+
 import {getMoves} from "../components/save_game";
 getMoves();
 
 window.getMoves = getMoves;
-
 
 
 // // js snippet needed for navbar change on scroll

@@ -70,6 +70,12 @@
   border: 1px solid lightgrey;
 }
 
+#chessgame-find {
+  width:450px;
+  height:450px;
+  border: 1px solid lightgrey;
+}
+
 .chess-headers {
   background: #F7F7F7;
   padding-left: 10px;
@@ -104,10 +110,18 @@
 }
 .game-notation-input {
   // width: 100%;
+  min-width: 400px;
   border: 1px solid lightgrey;
   margin-left: 25px;
   margin-right: 20px;
   height: 450px;
+  overflow-y: scroll;
+}
+
+.game-notation-find {
+  // width: 100%;
+  border: 1px solid lightgrey;
+  height: 250px;
   overflow-y: scroll;
 }
 .chess-description {
@@ -121,6 +135,12 @@
   // height: calc(100vh-70px);
 }
 
+.moves-input{
+  background: white;
+  min-height: 200px;
+  padding: 10px;
+}
+
 .moves-bold {
   font-size: 14px;
   font-weight: bold;
@@ -132,3 +152,34 @@
   cursor: pointer;
 }
 
+.wrapper-white {
+  background: white;
+}
+
+#search-results {
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+}
+
+.search-notation {
+  border: 1px solid lightgrey;
+}
+
+.search-headers {
+  background: #F7F7F7;
+  min-height: 60px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+// .chessbox-search-container {
+//   padding-top: 100px;
+// }
