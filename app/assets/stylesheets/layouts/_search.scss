@@ -1,0 +1,19 @@
+.search-page-box {
+  display: flex;
+  padding-top: 100px;
+  justify-content: space-around;
+}
+
+#search-results {
+  height: calc(100vh - 165px);
+  overflow-y: scroll;
+  display:flex;
+  justify-content: center;
+  max-width: 320px;
+}
+
+
+.search-input-notation {
+  border: 1px solid lightgrey;
+  width: 300px;
+}
