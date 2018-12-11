@@ -1,6 +1,6 @@
 // Games are the list of dataset sender.
 function dragGame() {
-  const games = document.querySelectorAll('.game-card');
+  const games = document.querySelectorAll('.result-game-card');
   games.forEach((g) => {
     g.addEventListener("dragstart", function( event ) {
         event.dataTransfer.setData("text", g.dataset.uid);

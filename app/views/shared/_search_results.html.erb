@@ -7,7 +7,7 @@
 
       <%= link_to chessbox_search_path(game),remote: true do %>
 
-        <div class="result-game-card border-secondary mb-2" style="width: 20rem;">
+        <div class="result-game-card border-secondary mb-2 " data-uid="<%= game[0].id %>" draggable="true" style="width: 20rem;">
 
           <div class="drag-icon"><i class="fas fa-grip-horizontal"></i>
           </div>
