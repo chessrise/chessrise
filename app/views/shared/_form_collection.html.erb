@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for @collection do |f| %>
+  <%= simple_form_for @collection, :url => collections_path, :method => :post do |f| %>
     <%= f.input :name %>
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>

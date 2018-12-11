@@ -1,19 +1,17 @@
 <%= link_to chessbox_path(game), remote: true do %>
 
-  <div class="game-card">
-    <div class="game-card-header">
-      <div class="game-card-players">
-        <% if game.white_player.present? && game.black_player.present? %>
-          <span> <%=game.white_player.last_name%></span>
-          <span> - </span>
-          <span> <%=game.black_player.last_name%></span>
-          <span> <%=game.result%></span>
-        <% else %>
-          <span> <%=game.name%></span>
-        <% end %>
-      </div>
-    </div>
+  <div class="game-card-players">
+    <% if game.white_player.present? && game.black_player.present? %>
+
+      <div class="game-card-players-player"> <%=game.white_player.last_name%></div>
+      <div class="game-card-players-result"> <%=game.result%></div>
+      <div class="game-card-players-player"> <%=game.black_player.last_name%></div>
+    <% else %>
+      <span> <%=game.name%></span>
+    <% end %>
   </div>
 
 <% end %>
+
+
 

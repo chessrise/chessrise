@@ -3,7 +3,7 @@
     # @collection = "All games"
     @collection = Collection.find(1)
     @collections = Collection.all
-    @games = Game.all
+    @games = @collection.games
     @game = Game.find(1)
   end
 
