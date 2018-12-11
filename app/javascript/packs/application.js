@@ -38,6 +38,9 @@ getMoves();
 
 window.getMoves = getMoves;
 
+import {dragGame, dropGame} from "../components/drag_n_drop";
+dragGame();
+dropGame();
 
 // // js snippet needed for navbar change on scroll
 // import { initUpdateNavbarOnScroll } from '../components/navbar';

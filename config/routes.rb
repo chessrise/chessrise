@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/search_by_fen/', to: 'games#search_by_fen', as: :search_by_fen
   get '/search', to: 'games#search', as: :search
   get '/:id/newgame', to: 'games#newgame', as: :newgame
+  post '/tags', to: 'games#savegame', as: :tags
 
   resources :games do
     collection do

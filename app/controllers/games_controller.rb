@@ -1,3 +1,4 @@
+
 class GamesController < ApplicationController
   before_action :calculate_eco, only: [:update, :create]
   before_action :set_game, only: [:show, :edit, :udpate, :destroy]
@@ -145,6 +146,13 @@ class GamesController < ApplicationController
       format.html { redirect_to collections_path }
       format.js
     end
+  end
+
+  def savegame
+    @game = Game.find(params[:chosen_game])
+    @collection = Collection.find(params[:chosen_collection])
+    @game.collections << @collection
+    @game.save
   end
 
   private
