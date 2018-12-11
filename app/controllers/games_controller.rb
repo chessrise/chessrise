@@ -107,7 +107,10 @@ class GamesController < ApplicationController
     # search_fen = Ply.find(params[:id]).searchable_fen
     # binding.pry
     search_fen = searchable_fen(params[:query])
-    @games = Ply.where("fen ILIKE ?", "#{search_fen}%").includes(:game).map(&:game).uniq
+    @games = Ply.where("fen ILIKE ?", "#{search_fen}%").includes(:game).map do |ply|
+      [ply.game, ply.ply_count]
+    end
+
     respond_to do |format|
       format.html { redirect_to collections_path }
       format.js
