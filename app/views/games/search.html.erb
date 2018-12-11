@@ -52,20 +52,7 @@
         </div>
 
       <div class="col-sm-3" id="search-results">
-        <ul>
-          <% @games.each do |game| %>
-            <%= link_to chessbox_search_path(game), remote: true do %>
-            <li>
-              <% if game.white_player.present? && game.black_player.present? && game.result.present? %>
-                <span><%= game.id %></span>
-                <span><%= game.white_player.last_name %></span>
-                <span><%= game.black_player.last_name %></span>
-                <span><%= game.result %></span>
-              <% end %>
-             </li>
-            <% end %>
-          <% end %>
-        </ul>
+        <%= render "shared/search_results", games: @games %>
 
       </div>
 

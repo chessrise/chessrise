@@ -1,50 +1,53 @@
-
-<div class="col-4">
+<div>
 
   <% if games.present? %>
     <p>Number of results: <%= games.count %></p>
 
     <% games.each do |game| %>
 
-      <div class="result-game-card border-secondary mb-2" style="width: 20rem;">
+      <%= link_to chessbox_search_path(game),remote: true do %>
 
-        <div class="drag-icon"><i class="fas fa-grip-horizontal"></i>
+        <div class="result-game-card border-secondary mb-2" style="width: 20rem;">
+
+          <div class="drag-icon"><i class="fas fa-grip-horizontal"></i>
+          </div>
+
+
+          <div class="result-game-card-body">
+
+            <h5 class="card-title result-game-card-players">
+
+              <% if game[0].white_player.present? && game[0].black_player.present? %>
+
+                <%= game[0].white_player.last_name %><span class="smaller-font"><%= " (#{game[0].elo_white}) " if game[0].elo_white.present? %></span> <span class="italique">vs</span> <%= game[0].black_player.last_name %><span class="smaller-font"><%= " (#{game[0].elo_black}) " if game[0].elo_black.present? %></span>
+
+              <% else %>
+
+                <span><%= game[0].name %></span>
+
+              <% end %>
+
+            </h5>
+
+            <h6 class="result-game-card-description">Result: <%= game[0].result %></h6>
+
+            <p class="card-text game-card-moves">
+
+              <% array = game[0].main_sorted_plies.map do |ply| %>
+                <% "#{ply.display_move_number} #{ply.move} " %>
+              <% end %>
+              <% if game[1].odd? %>
+                <%= array.join(" ").split[(game[1]-1)..-1].first(21).join(" ") %>
+              <% else %>
+                <%= array.join(" ").split[(game[1]-2)..-1].first(21).join(" ") %>
+              <% end %>
+            </p>
+
+
+          </div>
         </div>
 
-
-        <div class="result-game-card-body">
-
-          <h5 class="card-title result-game-card-players">
-
-            <% if game[0].white_player.present? && game[0].black_player.present? %>
-
-              <%= game[0].white_player.last_name %><span class="smaller-font"><%= " (#{game[0].elo_white}) " if game[0].elo_white.present? %></span> <span class="italique">vs</span> <%= game[0].black_player.last_name %><span class="smaller-font"><%= " (#{game[0].elo_black}) " if game[0].elo_black.present? %></span>
-
-            <% else %>
-
-              <span><%= game[0].name %></span>
-
-            <% end %>
-
-          </h5>
-
-          <h6 class="result-game-card-description">Result: <%= game[0].result %></h6>
-
-          <p class="card-text game-card-moves">
-
-            <% array = game[0].main_sorted_plies.map do |ply| %>
-              <% "#{ply.display_move_number} #{ply.move} " %>
-            <% end %>
-            <% if game[1].odd? %>
-              <%= array.join(" ").split[(game[1]-1)..-1].first(21).join(" ") %>
-            <% else %>
-              <%= array.join(" ").split[(game[1]-2)..-1].first(21).join(" ") %>
-            <% end %>
-          </p>
-
-
-        </div>
-      </div>
+      <% end %>
 
     <% end %>
 
