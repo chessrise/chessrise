@@ -1,11 +1,14 @@
 function emptyGameSidebar() {
   const gameSidebar = document.getElementById("sidebar-games");
   gameSidebar.innerHTML = "";
+  // gameSidebar.remove();
 };
 
 function populateGameSideBar(gameSidebarHTML) {
   const gameSidebar = document.getElementById("sidebar-games");
   gameSidebar.insertAdjacentHTML('beforeend', gameSidebarHTML);
+  // const gameSidebar = document.getElementById("sidebar-collection");
+  // gameSidebar.insertAdjacentHTML('afterend', gameSidebarHTML);
 };
 
 document.getElementById("chessbox").innerHTML = "";

@@ -1,6 +1,11 @@
-<% games.each do |game| %>
+<ul>
+  <% games.each do |game| %>
+    <li>
+      <span><%= game.id %></span>
+      <span><%= game.white_player.last_name %></span>
+      <span><%= game.black_player.last_name %></span>
+      <span><%= game.result %></span>
+     </li>
+  <% end %>
+</ul>
 
-  <%= game.id %>
-
-
-<% end %>

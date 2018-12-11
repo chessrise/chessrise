@@ -76,6 +76,25 @@ const initialPosition = (chess, id) => {
   return cg;
 };
 
+const inputPosition = (chess, id, fen) => {
+  const cg = Chessground(document.getElementById(id),
+   {movable: {
+      color: 'white',
+      free: false,
+      dests: toDests(chess)
+      }
+    }
+  );
+
+  cg.set( {fen: fen})
+
+  cg.set( {movable: {
+    events: { after: playOtherSide(cg, chess) }
+    }
+  });
+  return cg;
+};
+
 const playNext = (chess, cg, moves) => {
   if (i < moves.length) {
     chess.move(moves[i].innerText.replace(" ",""));
@@ -143,6 +162,7 @@ const chessBoxControls = (chess, cg) => {
 
 let i = 0;
 const initChessground = () =>{
+  console.log("inside initChessground");
   i = 0;
   if (document.getElementById("chessgame")) {
     const chess = new Chess();
@@ -151,19 +171,74 @@ const initChessground = () =>{
   }
 }
 
-
 const initChessgroundInput = () => {
+  console.log("inside initChessgroundInput");
   i = 0
   if (document.getElementById("chessgame-input")) {
     const chess = new Chess();
     const cg = initialPosition(chess, "chessgame-input");
     chessBoxControls(chess, cg);
+    if (document.getElementById("find-game-button")) {
+      document.getElementById("find-game-button").addEventListener("click", () => {
+        return chess.fen();
+      })
+    }
+
   }
 };
 
+const initChessgroundFind = () => {
+  console.log("inside initChessgroundFind");
+  i = 0
+  if (document.getElementById("chessgame-find")) {
+    const chess = new Chess();
+    const cg = initialPosition(chess, "chessgame-find");
+    chessBoxControls(chess, cg);
+    if (document.getElementById("find-game-button")) {
+      document.getElementById("find-game-button").addEventListener("click", () => {
+        const fen = chess.fen();
+        $.ajax( {
+          url: "/search_by_fen",
+          method: "GET",
+          headers: { "X-CSRF-Token": token },
+          dataType: "script",
+          data: {fen: fen}
+              })
+      })
+    }
+  }
+};
+
+const initChessgroundFindFen = (fen) => {
+  console.log("inside initChessgroundFindFen");
+  console.log(fen);
+  i = 0
+  if (document.getElementById("chessgame-find")) {
+    const chess = new Chess(fen);
+    const cg = inputPosition(chess, "chessgame-find", fen);
+    chessBoxControls(chess, cg);
+    if (document.getElementById("find-game-button")) {
+      document.getElementById("find-game-button").addEventListener("click", () => {
+        const fen = chess.fen();
+        $.ajax( {
+          url: "/search_by_fen",
+          method: "GET",
+          headers: { "X-CSRF-Token": token },
+          dataType: "script",
+          data: {fen: fen,
+                moves: moves}
+              })
+      })
+    }
+  }
+};
+
+
+
 export { initChessground };
 export { initChessgroundInput };
-
+export { initChessgroundFind };
+export { initChessgroundFindFen };
 
 
 
