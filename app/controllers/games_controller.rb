@@ -99,9 +99,13 @@ class GamesController < ApplicationController
   end
 
   def search
-    respond_to do |format|
-      format.html { redirect_to collections_path }
-      format.js
+    @collections = Collection.all
+    @search_fen = params[:search_fen] || "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    @moves = params[:moves]
+    if @search_fen.present?
+      @games = Ply.where("fen ILIKE ?", "#{@search_fen}%").includes(:game).map(&:game).uniq
+    else
+      @games = Game.all
     end
   end
 
@@ -113,8 +117,8 @@ class GamesController < ApplicationController
   def search_by_fen
     # search_fen = Ply.find(params[:id]).searchable_fen
     # binding.pry
-    search_fen = searchable_fen(params["fen"])
-    @games = Ply.where("fen ILIKE ?", "#{search_fen}%").includes(:game).map(&:game).uniq
+    @search_fen = searchable_fen(params["fen"])
+    @path = search_url(search_fen: @search_fen)
     respond_to do |format|
       format.html { redirect_to collections_path }
       format.js

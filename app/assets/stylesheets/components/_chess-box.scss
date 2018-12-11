@@ -71,9 +71,8 @@
 }
 
 #chessgame-find {
-  width:250px;
-  height:250px;
-  margin-left: 25px;
+  width:375px;
+  height:375px;
   border: 1px solid lightgrey;
 }
 
@@ -121,10 +120,7 @@
 
 .game-notation-find {
   // width: 100%;
-  min-width: 400px;
   border: 1px solid lightgrey;
-  margin-left: 25px;
-  margin-right: 20px;
   height: 250px;
   overflow-y: scroll;
 }
@@ -137,6 +133,18 @@
   background-color : white;
   padding-top: 100px;
   // height: calc(100vh-70px);
+}
+
+#chessbox-search {
+  background: red;
+}
+
+#chessbox-notation {
+  background: green;
+}
+
+#search-results {
+  background: blue;
 }
 
 .moves-bold {

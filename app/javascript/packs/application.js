@@ -10,6 +10,7 @@ if(document.getElementById("banner")) {
 import { initChessground } from "../components/chessgame";
 import { initChessgroundInput } from "../components/chessgame";
 import { initChessgroundFind } from "../components/chessgame";
+import { initChessgroundFindFen } from "../components/chessgame";
 
 if(document.getElementById("chessgame")) {
   initChessground();
@@ -21,10 +22,17 @@ if(document.getElementById("chessgame-input")) {
 }
 window.initChessgroundInput = initChessgroundInput;
 
+// if(document.getElementById("chessgame-find")) {
+//   initChessgroundFind();
+// }
+// window.initChessgroundFind = initChessgroundFind;
+
 if(document.getElementById("chessgame-find")) {
-  initChessgroundFind();
+  console.log("in application");
+  const fen = document.getElementById("fen");
+  initChessgroundFindFen(fen.dataset.fen);
 }
-window.initChessgroundFind = initChessgroundFind;
+window.initChessgroundFindFen = initChessgroundFindFen;
 
 import {getMoves} from "../components/save_game";
 getMoves();
