@@ -115,7 +115,9 @@ class GamesController < ApplicationController
       @moves = @moves_string.split(",")
     end
     if @search_fen.present?
-      @games = Ply.where("fen ILIKE ?", "#{@search_fen}%").includes(:game).map(&:game).uniq
+      @games = Ply.where("fen ILIKE ?", "#{@search_fen}%").includes(:game).map do |ply|
+        [ply.game, ply.ply_count]
+      end
     else
       @games = Game.all
     end
