@@ -6,7 +6,7 @@
     <% @collections.each do |collection| %>
         <%= link_to filtered_path(collection), remote: true do  %>
           <div class="collection-card" data-uid="<%= collection.id %>">
-            <p><%= collection.name %></p>
+            <p> <%= collection.name %> </p>
           </div>
         <% end %>
 <!--               <%#= link_to edit_collection_path(collection) do %>

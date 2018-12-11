@@ -3,18 +3,18 @@
   <div class="sidebar-header">
     <% if @collection == "All games" %>
       <div class="sidebar-games-title">
-        <p> <%= @collection %></p>
+        <p><%= @collection %></p>
       </div>
       <%= link_to newgame_path(@collection), remote: true do  %>
-        <i class="far fa-plus-square" style="color:#1E5772"></i>
+        <p><i class="far fa-plus-square" style="color:#1E5772"></i></p>
       <% end %>
 <!--         <i class="far fa-trash-alt" style="color:#1E5772"></i> -->
     <% else %>
       <div class="sidebar-games-title">
-        <p> <%= @collection.name %></p>
+        <p><%= @collection.name %></p>
       </div>
       <%= link_to newgame_path(@collection), remote: true do  %>
-        <i class="far fa-plus-square" style="color:#1E5772"></i>
+        <p><i class="far fa-plus-square" style="color:#1E5772"></i></p>
       <% end %>
 <!--         <i class="far fa-trash-alt" style="color:#1E5772"></i> -->
     <% end %>
