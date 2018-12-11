@@ -1,4 +1,3 @@
-
 <div class="wrapper">
 
   <div class="container-fluid">
@@ -23,19 +22,20 @@
       </div>
 
       <div class="col-sm-3" id="search-results">
-        <ul>
-          <% @games.each do |game| %>
-            <li>
+        <% @games.each do |game| %>
+        <div class="game-card" data-uid="<%= game.id %>" draggable="true">
+          <div class="game-card-header">
+            <div class="game-card-players">
               <% if game.white_player.present? && game.black_player.present? && game.result.present? %>
                 <span><%= game.id %></span>
                 <span><%= game.white_player.last_name %></span>
                 <span><%= game.black_player.last_name %></span>
                 <span><%= game.result %></span>
               <% end %>
-             </li>
-          <% end %>
-        </ul>
-
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
 
     </div>

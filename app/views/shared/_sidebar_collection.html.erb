@@ -5,7 +5,7 @@
   <div>
     <% @collections.each do |collection| %>
         <%= link_to filtered_path(collection), remote: true do  %>
-          <div class="collection-card">
+          <div class="collection-card" data-uid="<%= collection.id %>">
             <p><%= collection.name %></p>
           </div>
         <% end %>
@@ -14,6 +14,7 @@
           <%# end %> -->
     <% end %>
   </div>
+
   <div class="pin-left-bottom">
     <%#= link_to new_collection_path do %>
       <!-- <button data-toggle="modal" data-target="#exampleModal">
@@ -41,4 +42,11 @@
       </div>
     <%# end %>
   </div>
+
+  <%= form_tag tags_path, method: :post, remote: true do  %>
+    <input name="collection_id" id="chosen_collection">
+    <input name="game_id" id="chosen_game">
+    <input type="submit">
+  <% end %>
+
 </div>

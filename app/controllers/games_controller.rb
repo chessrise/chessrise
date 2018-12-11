@@ -100,6 +100,7 @@ class GamesController < ApplicationController
 
   def search
     @collections = Collection.all
+    @collection = Collection.find(1)
     @search_fen = params[:search_fen] || "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
     @moves = params[:moves]
     if @search_fen.present?
@@ -131,6 +132,13 @@ class GamesController < ApplicationController
       format.html { redirect_to collections_path }
       format.js
     end
+  end
+
+  def savegame
+    @game = Game.find(params[:game_id])
+    @collection = Collection.find(params[:game_id])
+    @game.collections << @collections
+    @game.save
   end
 
   private
