@@ -70,6 +70,13 @@
   border: 1px solid lightgrey;
 }
 
+#chessgame-find {
+  width:250px;
+  height:250px;
+  margin-left: 25px;
+  border: 1px solid lightgrey;
+}
+
 .chess-headers {
   background: #F7F7F7;
   padding-left: 10px;
@@ -104,10 +111,21 @@
 }
 .game-notation-input {
   // width: 100%;
+  min-width: 400px;
   border: 1px solid lightgrey;
   margin-left: 25px;
   margin-right: 20px;
   height: 450px;
+  overflow-y: scroll;
+}
+
+.game-notation-find {
+  // width: 100%;
+  min-width: 400px;
+  border: 1px solid lightgrey;
+  margin-left: 25px;
+  margin-right: 20px;
+  height: 250px;
   overflow-y: scroll;
 }
 .chess-description {

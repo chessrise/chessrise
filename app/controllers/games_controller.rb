@@ -98,6 +98,13 @@ class GamesController < ApplicationController
     end
   end
 
+  def search
+    respond_to do |format|
+      format.html { redirect_to collections_path }
+      format.js
+    end
+  end
+
   def searchable_fen(fen)
     content_to_delete = /(\s(w|b)\s)\K.+/.match(fen)[0]
     fen.gsub(content_to_delete, "")
@@ -106,7 +113,7 @@ class GamesController < ApplicationController
   def search_by_fen
     # search_fen = Ply.find(params[:id]).searchable_fen
     # binding.pry
-    search_fen = searchable_fen(params[:query])
+    search_fen = searchable_fen(params["fen"])
     @games = Ply.where("fen ILIKE ?", "#{search_fen}%").includes(:game).map(&:game).uniq
     respond_to do |format|
       format.html { redirect_to collections_path }

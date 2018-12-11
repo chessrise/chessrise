@@ -25,9 +25,9 @@
 
       <% if controller?("games") && action?("new") %>
 
-        <%= link_to new_game_path, class: "navbar-item navbar-link current-link" do %><i class="far fa-plus-square"></i> Add a game<% end %>
+<!--         <%= link_to new_game_path, class: "navbar-item navbar-link current-link" do %><i class="far fa-plus-square"></i> Add a game<% end %> -->
 
-        <%= link_to games_path, class: "navbar-item navbar-link" do %><i class='fas fa-search'></i> Search for games<% end %>
+        <%= link_to search_path, remote: true, class: "navbar-item navbar-link" do %><i class='fas fa-search'></i> Search for games<% end %>
 
 <!--       <% elsif controller?("games") && action?("search") %>
 
@@ -37,9 +37,9 @@
  -->
       <% else %>
 
-        <%= link_to new_game_path,class: "navbar-item navbar-link" do %><i class="far fa-plus-square"></i> Add a game<% end %>
+<!--         <%= link_to new_game_path,class: "navbar-item navbar-link" do %><i class="far fa-plus-square"></i> Add a game<% end %> -->
 
-        <%= link_to games_path, class: "navbar-item navbar-link" do %><i class='fas fa-search'></i> Search for games<% end %>
+        <%= link_to search_path, remote: true, class: "navbar-item navbar-link" do %><i class='fas fa-search'></i> Search for games<% end %>
 
       <% end %>
 

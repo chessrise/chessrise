@@ -151,19 +151,48 @@ const initChessground = () =>{
   }
 }
 
-
 const initChessgroundInput = () => {
   i = 0
   if (document.getElementById("chessgame-input")) {
     const chess = new Chess();
     const cg = initialPosition(chess, "chessgame-input");
     chessBoxControls(chess, cg);
+    if (document.getElementById("find-game-button")) {
+      document.getElementById("find-game-button").addEventListener("click", () => {
+        return chess.fen();
+      })
+    }
+
   }
 };
 
+const initChessgroundFind = () => {
+  i = 0
+  if (document.getElementById("chessgame-find")) {
+    const chess = new Chess();
+    const cg = initialPosition(chess, "chessgame-find");
+    chessBoxControls(chess, cg);
+    if (document.getElementById("find-game-button")) {
+      document.getElementById("find-game-button").addEventListener("click", () => {
+        const fen = chess.fen();
+        console.log(fen);
+        $.ajax( {
+          url: "/search_by_fen",
+          method: "GET",
+          headers: { "X-CSRF-Token": token },
+          dataType: "script",
+          data: {fen: fen}
+              })
+      })
+    }
+  }
+};
+
+
+
 export { initChessground };
 export { initChessgroundInput };
-
+export { initChessgroundFind };
 
 
 
