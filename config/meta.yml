@@ -1,5 +1,5 @@
 meta_product_name: "ChessRise"
 meta_title: "ChessRise - Create collections of master games"
 meta_description: "Create your own collections of master games, analyze and review your games in comparison"
-meta_image: "cover.png"                       # should exist in `app/assets/images/`
+meta_image: "chessrise_ogfb.png"                       # should exist in `app/assets/images/`
 twitter_account: "@jcharlesfabre"   # required for Twitter Cards
