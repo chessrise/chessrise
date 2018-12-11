@@ -11,14 +11,20 @@
   padding: 20px;
   font-size: 20px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 }
 
-.sidebar-header i {
-  opacity: 0.6;
+.sidebar-games-title{
+  color: #1E5772;
 }
-.sidebar-header i:hover {
-  opacity: 1;
-}
+
+// .sidebar-header i {
+//   opacity: 0.6;
+// }
+// .sidebar-header i:hover {
+//   opacity: 1;
+// }
 
 .pin-left-bottom {
   position: absolute;
