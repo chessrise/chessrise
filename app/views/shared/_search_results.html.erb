@@ -1,33 +1,29 @@
-<div class="container">
+<div class="col-4">
 
   <p>Number of results: <%= games.count %></p>
 
-  <% games.each do |game| %>
+ <!--  <div class="card-deck flex-direction:row"> -->
 
-    <div class="card">
+    <% games.each do |game| %>
 
-      <h3 class="card-header"> <%= game.id %> - <%= game.result %>
+      <div class="result-game-card border-secondary mb-2" style="width: 20rem;">
 
-      <div class="card-body">
+        <div class="drag-icon"><i class="fas fa-grip-horizontal"></i>
+        </div>
 
-        <h4 class="card-title"><%= game.white_player.last_name %> (<%= game.elo_white %>) vs <%= game.black_player.last_name %> (<%= game.elo_black %>)<h4>
 
-          <p class="card-text">
-            <% game.main_sorted_plies.each do |ply| %>
-              <span><%= ply.move %></span>
-            <% end %>
-          </p>
+        <div class="result-game-card-body">
+
+          <h5 class="card-title result-game-card-players"><%= game.white_player.last_name %><span class="smaller-font"> (<%= game.elo_white %>)</span> <span class="italique">vs</span> <%= game.black_player.last_name %><span class="smaller-font"> (<%= game.elo_black %>)</span></h5>
+
+          <h6 class="result-game-card-description">Result: <%= game.result %></h6>
+
+          <p class="card-text game-card-moves"> [...] 9. c4 Ng6 10. Qa4 Bd7 11. Qb4 Bf5 12. h4 h5 13. Qa4 Bd7 14. Qb4 Bf5...</p>
+        </div>
       </div>
 
-      <div class="card-footer">
-        <% game.collections.each do |collection| %>
-          <span><%= collection.name %></span>
-        <% end %>
-      </div>
+    <% end %>
 
-
-    </div>
-
-  <% end %>
+<!--   </div> -->
 
 </div>
