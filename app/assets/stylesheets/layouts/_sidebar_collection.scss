@@ -13,6 +13,13 @@
   font-weight: bold;
 }
 
+.sidebar-header i {
+  opacity: 0.6;
+}
+.sidebar-header i:hover {
+  opacity: 1;
+}
+
 .pin-left-bottom {
   position: absolute;
   left: 10px;
