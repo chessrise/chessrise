@@ -29,6 +29,7 @@
   color: white;
   border-radius: 5px;
   font-size: 14px;
+  max-height: 25px;
 }
 
 .player {
@@ -145,6 +146,7 @@
   font-weight: lighter;
   font-size: 12px;
   padding: 10px;
+  text-align: center;
 }
 .chess-box {
   display: flex;
