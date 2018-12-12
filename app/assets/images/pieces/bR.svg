@@ -7,7 +7,9 @@
 	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#1F1A17;}
 	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
 </style>
-<path class="st0" d="M100.7,32.7h14.9v-12h24.1v32.9l-19.5,15v42l15,15v18h13.4v21h-120v-21H42v-18l15-15v-42l-19.5-15v-33h24v12h15
-	v-12h24.1L100.7,32.7z"/>
-<path class="st1" d="M48.2,142.2v9h80.9v-9H48.2 M88.6,61.1H57.9l5.3,4.1v5h51v-5l5.3-4.1H88.6"/>
+<path class="st0" d="M100.7,32.7h14.9v-12h24.1v32.9l-19.5,15v42l15,15v18h13.4v21h-120v-21H42v-18l15-15v-42l-19.5-15V20.6h24v12
+	h15v-12h24.1L100.7,32.7z"/>
+<path class="st1" d="M88.6,124.2H52.2l-4.1,3.8v5.1h80.9v-5.1l-4.1-3.8H88.6 M48.2,142.2v9h80.9v-9H48.2 M88.6,46.2h-45v4.1l6.4,4.8
+	h77.3l6.2-4.8v-4.1H88.6 M88.6,61.1H57.9l5.3,4.1v5h51v-5l5.3-4.1H88.6 M88.6,109.1H63.1v4.1l-5.3,5.1h61.5l-5.3-5.1v-4.1
+	L88.6,109.1"/>
 </svg>
