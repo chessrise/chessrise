@@ -5,7 +5,8 @@
 }
 
 #search-results {
-  height: calc(100vh - 165px);
+  height: calc(100vh - 125px);
+  // height: 100vh;
   overflow-y: scroll;
   display:flex;
   justify-content: center;
@@ -15,4 +16,5 @@
 .search-input-notation {
   border: 1px solid lightgrey;
   width: 300px;
+  height: 375px;
 }
