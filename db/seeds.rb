@@ -4,12 +4,12 @@ p "Destroying all comments"
 Comment.destroy_all
 p "Destroying all plies"
 Ply.destroy_all
-p "Destroying all players"
-Player.destroy_all
-p "Destroying all games"
-Game.destroy_all
 p "Destroying all tags"
 Tag.destroy_all
+p "Destroying all games"
+Game.destroy_all
+p "Destroying all players"
+Player.destroy_all
 p "Destroying all collections"
 Collection.destroy_all
 p "Destroying all users"
@@ -28,6 +28,7 @@ ImportGamesFromPGNService.new("db/fixtures/wcc18_games.pgn",user1 ).call
 # ImportGamesFromPGNService.new("db/fixtures/miniatures_games.pgn",user1, "Miniatures" ).call
 # ImportGamesFromPGNService.new("db/fixtures/sicilian_khan_games.pgn","Sicilienne Noirs", user1 ).call
 ImportGamesFromPGNService.new("db/fixtures/my_games.pgn",user1, "Mes parties").call
+
 
 
 
