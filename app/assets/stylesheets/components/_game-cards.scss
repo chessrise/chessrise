@@ -54,6 +54,10 @@
   border-bottom: solid 1px LightGray;
 }
 
+.list-of-games :first-child .game-card-players {
+  border-top: none;
+}
+
 .game-card-description {
   font-size: 10px;
   color: black;
