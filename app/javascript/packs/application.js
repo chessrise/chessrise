@@ -42,6 +42,10 @@ import {dragGame, dropGame} from "../components/drag_n_drop";
 dragGame();
 dropGame();
 
+import { selectCollection, selectGame } from "../components/select_collection";
+selectCollection();
+selectGame();
+
 // // js snippet needed for navbar change on scroll
 // import { initUpdateNavbarOnScroll } from '../components/navbar';
 // initUpdateNavbarOnScroll()
@@ -49,4 +53,3 @@ dropGame();
 // // js snippet needed for sticky navbar on scroll
 // import { stickyFunction } from '../components/navbar';
 // window.onscroll = function() {stickyFunction()};
-

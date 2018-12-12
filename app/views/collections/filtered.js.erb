@@ -18,19 +18,6 @@ function populateChessBox(chessboxHTML) {
   chessbox.outerHTML = chessboxHTML;
 };
 
-function selectCard() {
-  const collections = document.querySelectorAll('.collection-card');
-  collections.forEach((element) => {
-      element.addEventListener('click', (event) => {
-        collections.forEach((element) => {
-        element.classList.remove('collection-card-persist');
-      });
-      element.classList.add('collection-card-persist');
-    })
-  });
-};
-
-selectCard();
 emptyGameSidebar();
 populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
 populateChessBox('<%= j render "shared/chess_box", game: @game %>')
