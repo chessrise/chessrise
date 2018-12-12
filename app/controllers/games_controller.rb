@@ -110,17 +110,18 @@ class GamesController < ApplicationController
   def search
     @collections = Collection.all
     @collection = Collection.first
-    @search_fen = params[:search_fen] || "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    @initial_fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    @search_fen = params[:search_fen] || @initial_fen
     if params[:moves].present?
       @moves_string = params[:moves]
       @moves = @moves_string.split(",")
     end
-    if @search_fen.present?
+    if @search_fen.present? && @search_fen != @initial_fen
       @games = Ply.where("fen ILIKE ?", "#{@search_fen}%").includes(:game).map do |ply|
         [ply.game, ply.ply_count]
       end
     else
-      @games = Game.all
+      @games = nil
     end
   end
 

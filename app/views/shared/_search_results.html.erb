@@ -1,12 +1,12 @@
 <div class="results">
-  <div class="results-header">
-    We found <%= games.count %> games!
-  </div>
 
+  <% if games.present? %>
 
-  <div class="results-cards">
+    <div class="results-header">
+      We found <%= games.count %> games!
+    </div>
 
-    <% if games.present? %>
+    <div class="results-cards">
 
       <% games.each do |game| %>
 
@@ -53,11 +53,16 @@
 
       <% end %>
 
-    <% else %>
+    </div>
 
-      <p>Congrats this position is unique (at least in our database). You might want to try searching from a broader position...</p>
+  <% elsif @search_fen != @initial_fen %>
 
-    <% end %>
-  </div>
+    <p>Congrats this position is unique (at least in our database). You might want to try searching from a broader position...</p>
+
+  <% else %>
+
+    <p>Enter a position and hit find games to explore master games.</p>
+
+  <% end %>
 
 </div>

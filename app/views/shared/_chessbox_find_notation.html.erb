@@ -20,13 +20,13 @@
     <% end %>
   </div>
 
-  <div class="chess-moves">
+  <div class="chess-moves-find">
     <% game.main_sorted_plies.each do |ply| %>
         <% if !ply.display_move_number.blank? %>
           <span class="move-number moves-bold"> <%= ply.display_move_number %></span>
         <% end %>
         <span class="moves moves-bold"> <%= ply.move  %></span>
     <% end %>
-    <span class="moves-bold"> <%= game.result %></span>
+<!--     <span class="moves-bold"> <%= game.result %></span> -->
   </div>
 </div>
