@@ -9,7 +9,7 @@ if(document.getElementById("banner")) {
 // chessground js library needed for displaying games
 import { initChessground } from "../components/chessgame";
 import { initChessgroundInput } from "../components/chessgame";
-import { initChessgroundFind } from "../components/chessgame";
+// import { initChessgroundFind } from "../components/chessgame";
 import { initChessgroundFindFen } from "../components/chessgame";
 
 if(document.getElementById("chessgame")) {
@@ -28,7 +28,6 @@ window.initChessgroundInput = initChessgroundInput;
 // window.initChessgroundFind = initChessgroundFind;
 
 if(document.getElementById("chessgame-find")) {
-  console.log("in application");
   const fen = document.getElementById("fen");
   initChessgroundFindFen(fen.dataset.fen);
 }
@@ -39,6 +38,9 @@ getMoves();
 
 window.getMoves = getMoves;
 
+import {dragGame, dropGame} from "../components/drag_n_drop";
+dragGame();
+dropGame();
 
 // // js snippet needed for navbar change on scroll
 // import { initUpdateNavbarOnScroll } from '../components/navbar';

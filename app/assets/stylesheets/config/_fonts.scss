@@ -6,6 +6,11 @@ $body-font: "Open Sans", "Helvetica", "sans-serif";
 $headers-font: "Roboto Mono", "Helvetica", "monospace";
 
 
+.italique {font-style: italic;}
+.bold {font-weight: bold;}
+.smaller-font {font-size: 10px;}
+
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

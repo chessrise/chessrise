@@ -96,6 +96,7 @@ const inputPosition = (chess, id, fen) => {
 };
 
 const playNext = (chess, cg, moves) => {
+
   if (i < moves.length) {
     chess.move(moves[i].innerText.replace(" ",""));
     moves[i].classList.add("current-move")
@@ -133,7 +134,6 @@ const removeCurrentMoves = (moves) => {
 };
 
 const chessBoxControls = (chess, cg) => {
-  // const moves = document.querySelectorAll(".moves");
   document.getElementById("next-move").addEventListener("click", () => {
     const tests = document.querySelectorAll(".moves");
     playNext(chess, cg, tests)
@@ -187,27 +187,27 @@ const initChessgroundInput = () => {
   }
 };
 
-const initChessgroundFind = () => {
-  console.log("inside initChessgroundFind");
-  i = 0
-  if (document.getElementById("chessgame-find")) {
-    const chess = new Chess();
-    const cg = initialPosition(chess, "chessgame-find");
-    chessBoxControls(chess, cg);
-    if (document.getElementById("find-game-button")) {
-      document.getElementById("find-game-button").addEventListener("click", () => {
-        const fen = chess.fen();
-        $.ajax( {
-          url: "/search_by_fen",
-          method: "GET",
-          headers: { "X-CSRF-Token": token },
-          dataType: "script",
-          data: {fen: fen}
-              })
-      })
-    }
-  }
-};
+// const initChessgroundFind = () => {
+//   console.log("inside initChessgroundFind");
+//   i = 0
+//   if (document.getElementById("chessgame-find")) {
+//     const chess = new Chess();
+//     const cg = initialPosition(chess, "chessgame-find");
+//     chessBoxControls(chess, cg);
+//     if (document.getElementById("find-game-button")) {
+//       document.getElementById("find-game-button").addEventListener("click", () => {
+//         const fen = chess.fen();
+//         $.ajax( {
+//           url: "/search_by_fen",
+//           method: "GET",
+//           headers: { "X-CSRF-Token": token },
+//           dataType: "script",
+//           data: {fen: fen}
+//               })
+//       })
+//     }
+//   }
+// };
 
 const initChessgroundFindFen = (fen) => {
   console.log("inside initChessgroundFindFen");
@@ -220,13 +220,14 @@ const initChessgroundFindFen = (fen) => {
     if (document.getElementById("find-game-button")) {
       document.getElementById("find-game-button").addEventListener("click", () => {
         const fen = chess.fen();
+        const moves = chess.history().join(",");
+        console.log(moves);
         $.ajax( {
           url: "/search_by_fen",
           method: "GET",
           headers: { "X-CSRF-Token": token },
           dataType: "script",
-          data: {fen: fen,
-                moves: moves}
+          data: {fen: fen, moves: moves}
               })
       })
     }
@@ -237,7 +238,7 @@ const initChessgroundFindFen = (fen) => {
 
 export { initChessground };
 export { initChessgroundInput };
-export { initChessgroundFind };
+// export { initChessgroundFind };
 export { initChessgroundFindFen };
 
 

@@ -1,0 +1,13 @@
+document.getElementById("chessgame-board").innerHTML = "";
+document.getElementById("chessgame-board").innerHTML =  "<div id='chessgame'></div> <%= j render 'shared/chess_box_controls' %>"
+document.querySelector(".search-input").innerHTML = "";
+
+
+function populateChessBox(chessboxHTML) {
+  const chessbox = document.getElementById("chessbox-search");
+  chessbox.innerHTML = chessboxHTML;
+};
+
+populateChessBox('<%= j render "shared/chessbox_find_notation", game: @game %>')
+
+window.initChessground();

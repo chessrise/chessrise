@@ -25,9 +25,6 @@
   font-weight: bold;
 }
 
-.create-button {
-}
-
 .control {
   margin: 1px;
 }
@@ -71,8 +68,8 @@
 }
 
 #chessgame-find {
-  width:375px;
-  height:375px;
+  width:450px;
+  height:450px;
   border: 1px solid lightgrey;
 }
 
@@ -119,9 +116,9 @@
 }
 
 .game-notation-find {
-  // width: 100%;
+  width: 300px;
   border: 1px solid lightgrey;
-  height: 250px;
+  height: 450px;
   overflow-y: scroll;
 }
 .chess-description {
@@ -135,26 +132,46 @@
   // height: calc(100vh-70px);
 }
 
-#chessbox-search {
-  background: red;
-}
-
-#chessbox-notation {
-  background: green;
-}
-
-#search-results {
-  background: blue;
+.moves-input{
+  background: white;
+  min-height: 200px;
+  padding: 10px;
 }
 
 .moves-bold {
   font-size: 14px;
-  font-weight: bold;
+  // font-weight: bold;
+}
+
+.moves {
+  color: #1E5772;
 }
 
 .moves:hover {
-  background-color: grey;
+  background-color: #FFB600;
   font-size: bold;
   cursor: pointer;
 }
 
+.wrapper-white {
+  background: white;
+}
+
+// .search-notation {
+//   border: 1px solid lightgrey;
+// }
+
+.search-headers {
+  background: #F7F7F7;
+  min-height: 60px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}

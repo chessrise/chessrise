@@ -1,0 +1,33 @@
+<div class="game-notation-find">
+  <div class="chess-headers">
+    <% if game.white_player.present? && game.black_player.present? %>
+      <div class="players">
+        <div class="player">
+          <p>
+            <span> <strong><%= game.white_player.fullname %></strong> </span>
+          </p>
+        </div>
+        <div> vs.</div>
+        <div class="player">
+          <p>
+            <span> <strong><%= game.black_player.fullname %></strong>  </span>
+          </p>
+        </div>
+      </div>
+      <div class="chess-description">
+        <p> <%= game.event %> | <%= game.site %> | Round: <%= game.round %> | <%= game.date %> | <%= game.result %>
+        </p>
+      </div>
+    <% else %>
+      <span> <%= game.name %></span>
+    <% end %>
+  </div>
+
+  <div class="chess-moves">
+    <% game.main_sorted_plies.each do |ply| %>
+        <span class="moves-bold"> <%= ply.display_move_number %></span>
+        <span class="moves moves-bold"> <%= ply.move  %></span>
+    <% end %>
+    <span class="moves-bold"> <%= game.result %></span>
+  </div>
+</div>
