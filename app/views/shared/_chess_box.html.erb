@@ -32,7 +32,9 @@
 
       <div class="chess-moves">
         <% game.main_sorted_plies.each do |ply| %>
-            <span class="moves-bold"> <%= ply.display_move_number %></span>
+            <% if !ply.display_move_number.blank? %>
+              <span class="move-number moves-bold"> <%= ply.display_move_number %></span>
+            <% end %>
             <span class="moves moves-bold"> <%= ply.move  %></span>
         <% end %>
         <span class="moves-bold"><%= game.result %></span>

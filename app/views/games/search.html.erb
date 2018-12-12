@@ -27,9 +27,9 @@
                   <% if @moves.present? %>
                     <% @moves.each_with_index do |move, index| %>
                       <% if (index % 2).zero? && index == 0 %>
-                        <span class="moves-bold">1.</span>
+                        <span class="move-number moves-bold">1</span>
                       <% elsif (index % 2).zero? && index != 0  %>
-                        <span class="moves-bold"> <%= "#{(index + 3) / 2}." %> </span>
+                        <span class="move-number moves-bold"> <%= "#{(index + 3) / 2}" %> </span>
                       <% end %>
                       <span class="moves moves-bold"><%=move%></span>
                     <% end %>

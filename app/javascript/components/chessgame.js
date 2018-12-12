@@ -21,9 +21,9 @@ const toColor = (chess) => {
 const displayMoveNumber = (ply_count) => {
   let moveNumber = ""
   if (ply_count === 1) {
-    moveNumber = `<span class="moves-bold">${1.}</span>`;
+    moveNumber = `<span class="move-number moves-bold">${1}</span>`;
   } else if (ply_count % 2 !==0) {
-    moveNumber = `<span class="moves-bold"> ${(ply_count+1)/2}.</span>`;
+    moveNumber = `<span class="move-number moves-bold"> ${(ply_count+1)/2}</span>`;
   }
   else {
     moveNumber = "";
