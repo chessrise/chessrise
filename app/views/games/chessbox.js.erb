@@ -1,3 +1,4 @@
+
 document.getElementById("chessbox").innerHTML = "";
 
 function populateChessBox(chessboxHTML) {
@@ -5,13 +6,14 @@ function populateChessBox(chessboxHTML) {
   chessbox.outerHTML = chessboxHTML;
 };
 
+populateChessBox('<%= j render "shared/chess_box", game: @game %>')
+window.initChessground();
 
 function selectGame() {
-  const games = document.querySelectorAll('.game-card');
+  let games = document.querySelectorAll('.game-card-players');
   games.forEach((element) => {
       element.addEventListener('click', (event) => {
         element.classList.add('game-card-persist');
-
         games.forEach((element) => {
         element.classList.remove('game-card-persist');
       });
@@ -20,6 +22,4 @@ function selectGame() {
   });
 };
 
-populateChessBox('<%= j render "shared/chess_box", game: @game %>')
-window.initChessground();
 selectGame();
