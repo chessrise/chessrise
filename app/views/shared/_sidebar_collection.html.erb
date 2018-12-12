@@ -12,13 +12,9 @@
         <%= link_to filtered_path(collection), remote: true do  %>
           <div class="collection-card" data-uid="<%= collection.id %>">
             <p> <%= collection.name %> </p>
+            <span id="game-counter-<%= collection.id %>"> <%= collection.games.count %></span>
           </div>
         <% end %>
-<!--               <%#= link_to edit_collection_path(collection) do %>
-            <i class="fas fa-pencil-alt"></i><-collection-header>
-
-            </-collection-header>
-          <%# end %> -->
     <% end %>
   </div>
 
