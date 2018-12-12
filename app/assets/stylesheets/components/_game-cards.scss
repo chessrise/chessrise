@@ -7,15 +7,9 @@
   border-top: solid 1px LightGray;
   display: flex;
   align-items: center;
-  // box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, 0.2);
-  // margin: 10px 0;
-  // border-radius: 5px;
   text-decoration: none;
   &:hover {
-  // transform: scale(1.05);
   background-color: #3183A8;
-  // box-shadow: 3px 3px 1px 1px rgba(0, 0, 255, 0.2);
-  // opacity: 0.7;
   }
 }
 .game-card-persist {
@@ -66,22 +60,25 @@
 .game-card-moves {
   font-size: 12px;
   font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 14px;
 }
 
 .result-game-card {
   text-decoration: none;
   padding: 0.75em;
-
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   /* flex-direction: column; */
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
-  background-clip: border-box;
+  // background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  justify-content: center;
+  // justify-content: space-between;
   align-item: center;
 
 
@@ -91,12 +88,12 @@
 }
 
 
-.drag-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-}
+// .drag-icon {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-right: 10px;
+// }
 
 .fa-grip-horizontal {
   display: flex;
@@ -110,8 +107,12 @@
 }
 
 .result-game-card-players {
+  width: 100%;
   font-size: 14px;
   color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   // font-weight: bold;
 }
 
@@ -125,4 +126,25 @@
 .result-game-card-persist {
   background-color: #3183A8;
   font-weight: bold;
+}
+
+.results-header {
+  background: #F7F7F7;
+  min-height: 60px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid lightgrey;
+}
+
+.search-header-result{
+  background: #2d5770;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  max-height: 25px;
+  padding: 5px;
 }

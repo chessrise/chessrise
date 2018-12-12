@@ -10,4 +10,5 @@ function populateGameSideBar(gameSidebarHTML) {
 
 emptyGameSidebar();
 populateGameSideBar('<%= j render "shared/sidebar_game", games: @games %>');
+document.getElementById("game-counter-"+"<%= @collection.id %>").innerHTML = "<%=@collection.games.count%>";
 

@@ -1,10 +1,10 @@
  class CollectionsController < ApplicationController
   def index
     # @collection = "All games"
-    @collection = Collection.find(1)
+    @collection = Collection.first
     @collections = Collection.all
     @games = @collection.games
-    @game = Game.find(1)
+    @game = Game.first
   end
 
   def show
