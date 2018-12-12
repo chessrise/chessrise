@@ -24,10 +24,10 @@ user1 = User.create!(email: "jcharlesfabre@gmail.com", password: "password")
 
 
 ImportGamesFromPGNService.new("db/fixtures/wcc18_games.pgn",user1 ).call
-# ImportGamesFromPGNService.new("db/fixtures/kasparov_games.pgn",user1, "Parties Kasparov" ).call
-# ImportGamesFromPGNService.new("db/fixtures/miniatures_games.pgn",user1, "Miniatures" ).call
-# ImportGamesFromPGNService.new("db/fixtures/sicilian_khan_games.pgn","Sicilienne Noirs", user1 ).call
-ImportGamesFromPGNService.new("db/fixtures/my_games.pgn",user1, "Mes parties").call
+ImportGamesFromPGNService.new("db/fixtures/kasparov_games.pgn",user1, "Parties Kasparov" ).call
+ImportGamesFromPGNService.new("db/fixtures/miniatures_games.pgn",user1, "Miniatures" ).call
+ImportGamesFromPGNService.new("db/fixtures/sicilian_khan_games.pgn","Sicilienne Noirs", user1 ).call
+# ImportGamesFromPGNService.new("db/fixtures/my_games.pgn",user1, "Mes parties").call
 
 
 
