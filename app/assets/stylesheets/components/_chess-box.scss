@@ -7,8 +7,29 @@
 
 .players {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 5px;
+}
+
+.header-box-item-player{
+  flex-basis: 40%;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.header-box-item-result{
+  flex-basis: 20%;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.header-result{
+  background: #2d5770;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  max-height: 25px;
 }
 
 .player {
@@ -20,9 +41,9 @@
 }
 
 .current-move {
-  // background: #FF4944; #Corail
-  background: #FFB600;
+  background: #EE5F6F;
   font-weight: bold;
+  color: white !important;
 }
 
 .control {
@@ -124,6 +145,8 @@
 .chess-description {
   font-weight: lighter;
   font-size: 12px;
+  padding: 10px;
+  text-align: center;
 }
 .chess-box {
   display: flex;
@@ -140,7 +163,21 @@
 
 .moves-bold {
   font-size: 14px;
-  // font-weight: bold;
+  display: inline-block;
+  margin-top: 12px;
+  padding: 2px 5px;
+}
+
+.move-number{
+  background-color: #f4f4f4;
+  font-weight: bold;
+  border-radius: 50%;
+  color: #797979;
+  width: 27px;
+  margin-left: 2px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #e2e2e2;
 }
 
 .moves {
@@ -151,6 +188,7 @@
   background-color: #FFB600;
   font-size: bold;
   cursor: pointer;
+  color: white;
 }
 
 .wrapper-white {
@@ -174,4 +212,11 @@
   display: flex;
   justify-content: center;
   margin-top: 40px;
+}
+
+.pin-right-top {
+  position: absolute;
+  right: 40px;
+  top: 10px;
+
 }

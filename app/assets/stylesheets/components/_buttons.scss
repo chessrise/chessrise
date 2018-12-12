@@ -35,15 +35,15 @@
 }
 
 .btn-bold-outline {
-  color: #1E5772;
-  background-color: white ;
+  color: white;
+  background-color: $coral ;
   padding: 10px 15px;
   border-radius: 4px;
-  font-weight: bold;
+  // font-weight: bold;
   transition: background 0.3s ease;
 }
 .btn-bold-outline:hover {
-  opacity: 1;
-  text-decoration: none;
   color: white;
+  text-decoration: none;
+  font-weight: bold;
 }

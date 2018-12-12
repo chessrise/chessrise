@@ -153,6 +153,10 @@ class GamesController < ApplicationController
     @collection = Collection.find(params[:chosen_collection])
     @game.collections << @collection
     @game.save
+    respond_to do |format|
+      format.html { redirect_to collections_path }
+      format.js
+    end
   end
 
   private
@@ -165,3 +169,5 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 end
+
+
