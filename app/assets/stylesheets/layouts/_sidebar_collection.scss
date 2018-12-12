@@ -7,6 +7,22 @@
   border-right: 1px solid LightGray
 }
 
+.sidebar-collection-header {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.sidebar-collection-header-item {
+  margin-top: 35px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .sidebar-header {
   width: 100%;
   padding: 20px;

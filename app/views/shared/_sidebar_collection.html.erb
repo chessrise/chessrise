@@ -1,7 +1,12 @@
 <div class="col-sm-2" id="sidebar-collection">
-  <div class="sidebar-header">
+    <div class="sidebar-collection-header">
+      <%= link_to collections_path, class: "navbar-brand" do %>
+        <%= image_tag "chess-rise-logo.png", height: 50 %>
+      <% end %>
+    </div>
+    <div class="sidebar-collection-header-item" >
       <p>My collections</p>
-  </div>
+    </div>
   <div>
     <% @collections.each do |collection| %>
         <%= link_to filtered_path(collection), remote: true do  %>
@@ -10,16 +15,14 @@
           </div>
         <% end %>
 <!--               <%#= link_to edit_collection_path(collection) do %>
-            <i class="fas fa-pencil-alt"></i>
+            <i class="fas fa-pencil-alt"></i><-collection-header>
+
+            </-collection-header>
           <%# end %> -->
     <% end %>
   </div>
 
   <div class="pin-left-bottom">
-    <%#= link_to new_collection_path do %>
-      <!-- <button data-toggle="modal" data-target="#exampleModal">
-        <i class="fas fa-folder-plus" style="color:#1E5772"></i>
-      </button> -->
       <i class="fas fa-folder-plus" data-toggle="modal" data-target="#exampleModal"" style="color:#1E5772"></i>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
