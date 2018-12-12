@@ -109,7 +109,7 @@ class GamesController < ApplicationController
 
   def search
     @collections = Collection.all
-    @collection = Collection.find(1)
+    @collection = Collection.first
     @search_fen = params[:search_fen] || "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
     if params[:moves].present?
       @moves_string = params[:moves]
