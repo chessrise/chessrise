@@ -9,9 +9,9 @@ class Ply < ApplicationRecord
 
   def display_move_number
     if white? && ply_count == 1
-      return "1."
+      return "1"
     elsif white? && ply_count != 1
-      return "#{(ply_count + 1) / 2}."
+      return "#{(ply_count + 1) / 2}"
     end
   end
 

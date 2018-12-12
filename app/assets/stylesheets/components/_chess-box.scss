@@ -20,9 +20,9 @@
 }
 
 .current-move {
-  // background: #FF4944; #Corail
-  background: #FFB600;
+  background: #EE5F6F;
   font-weight: bold;
+  color: white !important;
 }
 
 .control {
@@ -140,7 +140,21 @@
 
 .moves-bold {
   font-size: 14px;
-  // font-weight: bold;
+  display: inline-block;
+  margin-top: 12px;
+  padding: 2px 5px;
+}
+
+.move-number{
+  background-color: #f4f4f4;
+  font-weight: bold;
+  border-radius: 50%;
+  color: #797979;
+  width: 27px;
+  margin-left: 2px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #e2e2e2;
 }
 
 .moves {
@@ -151,6 +165,7 @@
   background-color: #FFB600;
   font-size: bold;
   cursor: pointer;
+  color: white;
 }
 
 .wrapper-white {
