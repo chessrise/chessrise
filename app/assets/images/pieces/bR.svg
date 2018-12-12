@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="177.17" height="177.17" shape-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 50 50"><defs><linearGradient id="0" x1="21.19" y1="37.552" x2="77.74" y2="37.429" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><path fill="#1f1a17" d="m28.408 9.22h4.216v-3.395h6.796v9.295l-5.5 4.243v11.857l4.22 4.221v5.08h3.789v5.929h-33.859v-5.929h3.794v-5.08l4.246-4.221v-11.857l-5.508-4.243v-9.295h6.774v3.395h4.242v-3.395h6.79z"/><path fill="url(#0)" d="m25.01 35.04h-10.27l-1.143 1.067v1.439h22.826v-1.439l-1.143-1.067h-10.27m-11.413 5.08v2.532h22.826v-2.532h-22.826m11.413-27.08h-12.7v1.143l1.812 1.363h21.802l1.761-1.363v-1.143h-12.675m0 4.191h-8.678l1.482 1.168v1.414h14.393v-1.414l1.482-1.168h-8.678m0 13.547h-7.197v1.143l-1.482 1.439h17.357l-1.482-1.439v-1.143h-7.197"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" image-rendering="optimizeQuality" shape-rendering="geometricPrecision"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 177.2 177.2"
+	 style="enable-background:new 0 0 177.2 177.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#1F1A17;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<path class="st0" d="M100.7,32.7h14.9v-12h24.1v32.9l-19.5,15v42l15,15v18h13.4v21h-120v-21H42v-18l15-15v-42l-19.5-15v-33h24v12h15
+	v-12h24.1L100.7,32.7z"/>
+<path class="st1" d="M48.2,142.2v9h80.9v-9H48.2 M88.6,61.1H57.9l5.3,4.1v5h51v-5l5.3-4.1H88.6"/>
+</svg>
