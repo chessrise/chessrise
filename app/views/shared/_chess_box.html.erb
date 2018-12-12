@@ -9,21 +9,18 @@
       <div class="chess-headers">
         <% if game.white_player.present? && game.black_player.present? %>
           <div class="players">
-            <div class="player">
-              <p>
-                <span> <strong><%= game.white_player.fullname %></strong> </span>
-              </p>
+            <div class="player header-box-item-player">
+              <span> <strong><%= game.white_player.fullname %></strong> </span>
             </div>
-            <div> vs.</div>
-            <div class="player">
-              <p>
-                <span> <strong><%= game.black_player.fullname %></strong>  </span>
-              </p>
+            <div class="header-result header-box-item-result">
+              <span> <%= game.result %></span>
+            </div>
+            <div class="player header-box-item-player">
+              <span> <strong><%= game.black_player.fullname %></strong>  </span>
             </div>
           </div>
           <div class="chess-description">
-            <p> <%= game.event %> | <%= game.site %> | Round: <%= game.round %> | <%= game.date %> | <%= game.result %>
-            </p>
+            <%= game.event %> | <%= game.site %> | Round: <%= game.round %> | <%= game.date %>
           </div>
         <% else %>
           <span> <%= game.name %></span>

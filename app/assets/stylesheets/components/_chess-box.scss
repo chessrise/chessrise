@@ -7,8 +7,28 @@
 
 .players {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 5px;
+}
+
+.header-box-item-player{
+  flex-basis: 40%;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.header-box-item-result{
+  flex-basis: 20%;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.header-result{
+  background: #2d5770;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 .player {
@@ -124,6 +144,7 @@
 .chess-description {
   font-weight: lighter;
   font-size: 12px;
+  padding: 10px;
 }
 .chess-box {
   display: flex;
