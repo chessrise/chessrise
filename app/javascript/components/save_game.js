@@ -16,7 +16,7 @@ const getMoves = () => {
       const white_player_last_name = document.getElementById("white_player_last_name").value;
       const black_player_last_name = document.getElementById("black_player_last_name").value;
       const collection_id = document.getElementById("collection-id").value;
-      const result = document.querySelector('input[name="result"]:checked').value;
+      const result = document.querySelector('option:checked').value;
       $.ajax( {
         url: "/games",
         method: "POST",

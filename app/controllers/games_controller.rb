@@ -28,7 +28,6 @@ class GamesController < ApplicationController
     black_player_last_name = params["black_player_last_name"]
     result = params["result"]
 
-
     if Player.exists?(last_name: white_player_last_name, first_name: white_player_first_name)
       p "white player #{white_player_first_name} #{white_player_last_name} already in DB. Linking Player ID!"
       white_player = Player.find_by(
