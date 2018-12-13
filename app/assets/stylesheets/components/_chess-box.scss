@@ -19,13 +19,14 @@
 }
 
 .header-box-item-result{
-  flex-basis: 20%;
+  flex-basis: 14%;
   flex-shrink: 0;
   text-align: center;
 }
 
 .header-result{
-  background: #2d5770;
+  // background: #2d5770;
+  background: #6b6b6b;
   font-weight: bold;
   color: white;
   border-radius: 5px;
@@ -268,7 +269,28 @@
   align-items: center;
 }
 
-.find-button {
+// .find-button {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 40px;
+// }
+
+.reset-button {
+  background-color: lightgrey;
+  margin-right: 5px;
+  opacity: 0.8;
+  color: black;
+  width: 115px;
+  // font-weight: bold;
+}
+
+.reset-button:hover {
+  background-color: lightgrey;
+  margin-right: 5px;
+  opacity: 1;
+}
+
+.chessboard-buttons {
   display: flex;
   justify-content: center;
   margin-top: 40px;
