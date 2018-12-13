@@ -1,3 +1,22 @@
+.result-game-card {
+  text-decoration: none;
+  padding: 0.75em;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  // background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  // justify-content: space-between;
+  align-item: center;
+  &:hover {
+  background-color: #3183A8;
+  opacity: 0.8;
+  }
+}
 // Games we find in the 2nd sidebar
 .game-card {
   padding: 10px;
@@ -10,6 +29,7 @@
   text-decoration: none;
   &:hover {
   background-color: #3183A8;
+  opacity: 0.8;
   }
 }
 .game-card-persist {
@@ -64,27 +84,6 @@
   justify-content: center;
   width: 100%;
   font-size: 14px;
-}
-
-.result-game-card {
-  text-decoration: none;
-  padding: 0.75em;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  /* flex-direction: column; */
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  // background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  // justify-content: space-between;
-  align-item: center;
-
-
-  &:hover {
-    background-color: #3183A8;
-  }
 }
 
 

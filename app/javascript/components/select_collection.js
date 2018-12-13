@@ -11,12 +11,12 @@ function selectCollection() {
   });
 };
 
-function selectGame() {
-  let games = document.querySelectorAll('.game-card-players');
-  games.forEach((element) => {
+function selectResult() {
+  const results = document.querySelectorAll('.result-game-card');
+  results.forEach((element) => {
       element.addEventListener('click', (event) => {
         element.classList.add('game-card-persist');
-        games.forEach((element) => {
+        results.forEach((element) => {
         element.classList.remove('game-card-persist');
       });
       element.classList.add('game-card-persist');
@@ -24,4 +24,4 @@ function selectGame() {
   });
 };
 
-export { selectCollection, selectGame };
+export { selectCollection, selectResult };
