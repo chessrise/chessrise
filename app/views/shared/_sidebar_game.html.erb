@@ -18,7 +18,7 @@
 
     <div class="align-left">
       <% if @collection.games.present? && @collection.games.count > 0 %>
-        <%= link_to newgame_path(@collection), remote: true, class: "btn btn-bold-outline" do %>
+        <%= link_to newgame_path(@collection), remote: true, class: "btn-bold-sidebar-games" do %>
           <i class="fas fa-plus-circle"></i> New game
         <% end %>
       <% end %>

@@ -36,15 +36,35 @@
 
 .btn-bold-outline {
   color: white;
-  background-color: $blue ;
+  background-color: $coral ;
   padding: 10px 15px;
-  font-size: 12px;
+  font-size: 14px;
   // border-radius: 4px;
   border: none;
   line-height: 1;
   // font-weight: bold;
   transition: background 0.3s ease;
 }
+
+.btn-bold-sidebar-games {
+  color: white;
+  background-color: $blue ;
+  padding: 8px 13px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: none;
+  line-height: 1;
+  // font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-bold-sidebar-games:hover {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
 .btn-bold-outline:hover {
   color: white;
   text-decoration: none;
