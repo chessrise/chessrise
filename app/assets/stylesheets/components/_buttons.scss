@@ -44,11 +44,17 @@
   line-height: 1;
   // font-weight: bold;
   transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-bold-outline:hover {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .btn-bold-sidebar-games {
-  color: white;
-  background-color: $blue ;
+  color: $blue;
   padding: 8px 13px;
   font-size: 12px;
   border-radius: 4px;
@@ -59,14 +65,28 @@
 }
 
 .btn-bold-sidebar-games:hover {
-  color: white;
+  color: $blue;
   text-decoration: none;
   font-weight: bold;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-.btn-bold-outline:hover {
+.btn-bold-sidebar-collections {
+  color: white;
+  background-color: $blue ;
+  padding: 8px 13px;
+  font-size: 1rem;
+  border-radius: none;
+  // border: none;
+  line-height: 1;
+  margin-top: 20px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-bold-sidebar-collections:hover {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  opacity: 0.9;
 }

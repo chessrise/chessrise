@@ -1,12 +1,18 @@
 <div class="col-sm-2" id="sidebar-collection">
-    <div class="sidebar-collection-header">
-      <%= link_to collections_path, class: "navbar-brand" do %>
-        <%= image_tag "chess-rise-logo.png", height: 50 %>
-      <% end %>
-    </div>
-    <div class="sidebar-collection-header-item" >
-      <p>My collections</p>
-    </div>
+
+  <div class="sidebar-collection-header">
+    <%= link_to collections_path, class: "navbar-brand" do %>
+      <%= image_tag "chess-rise-logo.png", height: 50 %>
+    <% end %>
+
+    <%= link_to search_path, class: "btn btn-bold-sidebar-collections" do %>Explore<% end %>
+  </div>
+
+
+  <div class="sidebar-collection-header-item" >
+    <p>My collections</p>
+  </div>
+
   <div>
     <% @collections.each do |collection| %>
         <%= link_to filtered_path(collection), remote: true do  %>
