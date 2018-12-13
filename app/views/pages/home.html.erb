@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: url(<%= image_path('chessrisebanner.png') %>);">
   <div class="pin-right-top">
     <% if user_signed_in? %>
-        <%= link_to "Jump in", collections_path, class: "btn btn-bold-outline btn-sm" %>
+        <%= link_to "Jump in", collections_path, class: "btn btn-bold-outline btn-sm", style: 'width: 82px' %>
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-bold-outline btn-sm" %>
     <% end %>
