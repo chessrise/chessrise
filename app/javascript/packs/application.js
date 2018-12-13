@@ -42,9 +42,9 @@ import {dragGame, dropGame} from "../components/drag_n_drop";
 dragGame();
 dropGame();
 
-import { selectCollection, selectGame } from "../components/select_collection";
+import { selectCollection, selectResult } from "../components/select_collection";
 selectCollection();
-selectGame();
+selectResult();
 
 // // js snippet needed for navbar change on scroll
 // import { initUpdateNavbarOnScroll } from '../components/navbar';
