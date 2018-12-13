@@ -45,7 +45,7 @@
     <div class="empty-collection">
       <div><p> The <strong><%= @collection.name %></strong> collection is empty.</p></div>
       <%= link_to newgame_path, remote: true, class: "btn btn-primary" do  %>
-        Add games
+        <i class="fas fa-plus-circle"></i>  Add a game
       <% end %>
     </div>
   <% end %>
