@@ -216,7 +216,7 @@ const initChessgroundFindFen = (fen) => {
   if (document.getElementById("chessgame-find")) {
     const chess = new Chess(fen);
     const cg = inputPosition(chess, "chessgame-find", fen);
-    chessBoxControls(chess, cg);
+    // chessBoxControls(chess, cg);
     if (document.getElementById("find-game-button")) {
       document.getElementById("find-game-button").addEventListener("click", () => {
         const fen = chess.fen();
