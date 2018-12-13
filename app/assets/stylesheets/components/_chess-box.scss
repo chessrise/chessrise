@@ -118,6 +118,49 @@
   min-height: 70px;
 }
 
+.chess-headers-new-game {
+  background: #F7F7F7;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+#white_player_first_name {
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+#black_player_first_name {
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.white-player-input {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+}
+
+.black-player-input {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+}
+
+.result-input {
+  display: flex;
+  justify-content: center;
+  flex-basis: 20%;
+}
+
 .chess-controls{
   display:flex;
   justify-content: center;

@@ -9,17 +9,24 @@
 
     <div class="game-notation-input">
 
-      <div class="chess-headers">
-        <input type="text" name="white_player_first_name" id="white_player_first_name" placeholder="White First Name">
-        <input type="text" name="white_player_last_name" id="white_player_last_name" placeholder="White Last Name">
-        <input type="text" name="black_player_first_name" id="black_player_first_name" placeholder="Black First Name">
-        <input type="text" name="black_player_last_name" id="black_player_last_name" placeholder="Black Last Name">
-
-        <ul class="list-inline">
-          <li class="list-inline-item"><input type="radio" name="result" id="result" value="1-0"> White</li>
-          <li class="list-inline-item"><input type="radio" name="result" id="result" value="1/2-1/2"> Draw</li>
-          <li class="list-inline-item"><input type="radio" name="result" id="result" value="0-1"> Black</li>
-        </ul>
+      <div class="chess-headers-new-game">
+        <div class="white-player-input">
+          <span> <strong>White player</strong> </span>
+          <input type="text" name="white_player_first_name" id="white_player_first_name" placeholder="First Name">
+          <input type="text" name="white_player_last_name" id="white_player_last_name" placeholder="Last Name">
+        </div>
+        <div class="result-input">
+          <select name="result">
+            <option value="1-0">1-0</option>
+            <option value="1/2-1/2">1/2 - 1/2</option>
+            <option value="0-1">0-1</option>
+          </select>
+        </div>
+        <div class="black-player-input">
+          <span><strong>Black player</strong></span>
+          <input type="text" name="black_player_first_name" id="black_player_first_name" placeholder="First Name">
+          <input type="text" name="black_player_last_name" id="black_player_last_name" placeholder="Last Name">
+        </div>
       </div>
 
       <div class="moves-input" id="moves-create"></div>
