@@ -40,12 +40,38 @@
 
             </div>
 
-            <div class="card-text game-card-moves">
+            <p class="card-text game-card-moves">
+
               <% array = game[0].main_sorted_plies.map do |ply| %>
                 <% "#{ply.display_move_number} #{ply.move} " %>
               <% end %>
-              <%= array.join(" ").split[(game[1]-1)..-1].first(12).join(" ") %>
-            </div>
+
+              <% if game[1] == 1 %>
+
+                <% string = array.join(" ").split[(game[1]-1)..-1].first(12).join(" ") %>
+                <%= start_at_right_move(string) %>
+
+              <% elsif game[1] == 2 %>
+
+                <%= array.join(" ").split[(game[1]-2)..-1].first(12).join(" ") %>
+
+              <% else %>
+
+                <% if game[1].odd? %>
+
+                  <% string = array.join(" ").split[(game[1]-2)..-1].first(14).join(" ") %>
+                  <%= start_at_right_move(string) %>
+
+                <% else %>
+
+                  <% string = array.join(" ").split[(game[1]-1)..-1].first(13).join(" ") %>
+                  <%= start_at_right_move(string) %>
+
+                <% end %>
+
+              <% end %>
+
+            </p>
 
           </div>
 

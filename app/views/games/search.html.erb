@@ -8,6 +8,7 @@
         <div class="pin-right-left">
           <p class="search-title">Search games by position</p>
           <p class="search-description">Drag pieces on the board and hit find games to explore master games.</p>
+          <p class="search-description">You can then save games you like by drag-&-dropping them into the collection of your choice.</p>
         </div>
 
         <div class="pin-right-top">
@@ -33,6 +34,7 @@
 
             <div class="search-input-notation">
               <div class="search-headers">
+                  Your moves
               </div>
 
               <div class="moves-input">
@@ -45,7 +47,10 @@
                         <span class="move-number moves-bold"> <%= "#{(index + 3) / 2}" %> </span>
                       <% end %>
                       <span class="moves moves-bold"><%=move%></span>
+
                     <% end %>
+                    <% else %>
+                      No moves entered.
                   <% end %>
                 </div>
               </div>
