@@ -16,9 +16,11 @@
 
     <% end %>
 
-    <div>
-      <%= link_to newgame_path(@collection), remote: true, class: "btn btn-bold-outline" do %>
-        <i class="fas fa-plus-circle"></i> Add a game
+    <div class="align-left">
+      <% if @collection.games.present? && @collection.games.count > 0 %>
+        <%= link_to newgame_path(@collection), remote: true, class: "btn btn-bold-outline" do %>
+          <i class="fas fa-plus-circle"></i> New game
+        <% end %>
       <% end %>
     </div>
 
