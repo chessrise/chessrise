@@ -16,12 +16,20 @@ function dropGame() {
   collections.forEach( (col)=> {
     col.addEventListener("dragenter", function( event ) {
       event.preventDefault();
+      if ( event.target.className == "collection-card" ) {
+         event.target.style.background = "#164055";
+         event.target.style.color = "white";
+            }
       }, false);
     col.addEventListener("dragover", function( event ) {
       event.preventDefault();
       }, false);
     col.addEventListener("dragleave", function( event ) {
        event.preventDefault();
+       if ( event.target.className == "collection-card" ) {
+         event.target.style.background = "";
+         event.target.style.color = "#164055";
+            }
       }, false);
     col.addEventListener("drop", function( event ) {
       event.preventDefault();
