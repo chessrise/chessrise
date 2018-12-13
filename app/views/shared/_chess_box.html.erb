@@ -1,7 +1,4 @@
 <div class="chess-box col-sm-8" id="chessbox">
-  <div class="pin-right-top">
-    <%= link_to search_path, class: "btn btn-primary" do %><i class='fas fa-search'></i> Explore master games<% end %>
-  </div>
   <% if @game.present? %>
     <div class="board">
       <div id="chessgame"></div>
