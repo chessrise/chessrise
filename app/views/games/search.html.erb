@@ -11,14 +11,17 @@
           <p class="search-description">You can then save games you like by drag-&-dropping them into the collection of your choice.</p>
         </div>
 
-        <div class="pin-right-top">
+<!--         <div class="pin-right-top">
           <%= link_to search_path, class: "btn btn-primary" do %><i class='fas fa-search'></i> New search<% end %>
-        </div>
+        </div> -->
 
         <div id="chessgame-board">
           <div id="chessgame-find"></div>
           <div id="fen" data-fen="<%=@search_fen%>"></div>
           <div id="moves" data-moves="<%= @moves_string %>"></div>
+
+          <div class="chessboard-buttons">
+            <%= link_to search_path, class: "btn reset-button" do %> Reset<% end %>
 
           <% if @search_fen == @initial_fen && @games.nil? %>
             <div class="find-button">
@@ -26,6 +29,9 @@
               <button id="find-game-button" class="btn btn-primary">Find games</button>
             </div>
           <% end %>
+
+          </div>
+
         </div>
 
         <div class="search-notation">
