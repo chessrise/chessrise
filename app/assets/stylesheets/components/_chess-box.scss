@@ -265,8 +265,10 @@
   min-height: 60px;
   font-weight: bold;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid lightgrey;
 }
 
 // .find-button {
