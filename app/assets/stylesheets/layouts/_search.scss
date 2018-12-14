@@ -4,13 +4,15 @@
   justify-content: space-around;
 }
 
+.results {
+  background: #F7F7F7;
+  border: 1px solid lightgrey;
+}
+
 #search-results {
-  height: calc(100vh - 125px);
-  // height: 100vh;
-  overflow-y: scroll;
-  display:flex;
+  height: 375px;
+  display: flex;
   justify-content: center;
-  // max-width: 320px;
   width: 320px;
 }
 
@@ -18,4 +20,83 @@
   border: 1px solid lightgrey;
   width: 300px;
   height: 375px;
+}
+
+.results-cards {
+  height: 305px;
+  overflow-y: scroll;
+  background: #F7F7F7;
+
+  border-bottom: 1px solid lightgrey;
+}
+
+.result-game-card {
+  text-decoration: none;
+  padding: 0.75em;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 96%;
+  margin: auto;
+  word-wrap: break-word;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  align-item: center;
+  &:hover {
+  background-color: #3183A8;
+  opacity: 0.8;
+  }
+}
+
+.fa-grip-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.result-game-card-body {
+  padding: none;
+}
+
+.result-game-card-players {
+  width: 100%;
+  font-size: 14px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-game-card-description {
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  padding: none;
+}
+
+.result-game-card-persist {
+  background-color: #3183A8;
+  font-weight: bold;
+}
+
+.results-header {
+  background: #F7F7F7;
+  min-height: 60px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.search-header-result{
+  background: #6b6b6b;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  font-size: 11px;
+  max-height: 25px;
+  padding: 5px;
 }
