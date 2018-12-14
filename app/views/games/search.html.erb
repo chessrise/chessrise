@@ -11,10 +11,6 @@
           <p class="search-description">You can then save games you like by drag-&-dropping them into the collection of your choice.</p>
         </div>
 
-<!--         <div class="pin-right-top">
-          <%= link_to search_path, class: "btn btn-primary" do %><i class='fas fa-search'></i> New search<% end %>
-        </div> -->
-
         <div id="chessgame-board">
           <div id="chessgame-find"></div>
           <div id="fen" data-fen="<%=@search_fen%>"></div>
@@ -87,9 +83,13 @@
           </div>
         </div>
 
-        <div id="search-results">
-          <%= render "shared/search_results", games: @games %>
-        </div>
+        <% if @games.nil? %>
+          <div class="empty-results"></div>
+        <% else %>
+          <div id="search-results">
+            <%= render "shared/search_results", games: @games %>
+          </div>
+        <% end %>
 
       </div>
 

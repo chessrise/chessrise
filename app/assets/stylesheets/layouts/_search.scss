@@ -6,10 +6,18 @@
 
 .results {
   background: #F7F7F7;
-  border: 1px solid lightgrey;
+  // border: 1px solid lightgrey;
 }
 
 #search-results {
+  height: 375px;
+  display: flex;
+  justify-content: center;
+  width: 320px;
+  border: 1px solid lightgrey;
+}
+
+.empty-results {
   height: 375px;
   display: flex;
   justify-content: center;
